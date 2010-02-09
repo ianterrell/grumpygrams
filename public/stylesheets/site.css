@@ -26,14 +26,14 @@ a:hover { color: #5719b3; text-decoration: underline; }
 #send-a-grumpy-gram img { vertical-align: bottom; }
 
 /* -------------------- Flash ----------------------*/
-.flash{ width: 100%; padding:10px 10px 10px 30px; margin-bottom: 10px; -moz-border-radius: 4px; -webkit-border-radius: 4px; }
+.flash{ width: 100%; padding:10px 10px 10px 30px; margin-bottom: 10px; -moz-border-radius: 8px; -webkit-border-radius: 8px; }
 .flash a { text-decoration: underline; }
 .flash a.close { display:block; margin-top: 1px; float:right; text-decoration:none; text-align:center; }
 .flash a:hover { background: none; }
-.error, .notice, .success { border:1px solid #ddd; }
-.error { background:#FBE3E4 url(/images/icons/coquette/16x16/delete.png) 7px 50% no-repeat; color:#8a1f11; border-color:#FBC2C4;  }
-.notice { background:#FFF6BF url(/images/icons/coquette/16x16/warning.png) 7px 50% no-repeat; color:#514721; border-color:#FFD324;  }
-.success { background:#D1FF9C url(/images/icons/coquette/16x16/accept.png) 7px 50% no-repeat; color:#264409; border-color:#C6D880;  }
+.error, .notice, .success { border:1px solid #a62dd5; }
+.error { background:#FBE3E4 url(/images/icons/coquette/16x16/delete.png) 7px 50% no-repeat; color:#8a1f11; }
+.notice { background:#FFF6BF url(/images/icons/coquette/16x16/warning.png) 7px 50% no-repeat; color:#514721; }
+.success { background:#D1FF9C url(/images/icons/coquette/16x16/accept.png) 7px 50% no-repeat; color:#264409; }
 .error a { color:#8a1f11; }
 .notice a { color:#514721; }
 .success a { color:#264409; }
