@@ -1,33 +1,42 @@
-<script src="http://widgets.twimg.com/j/2/widget.js"></script>
-<script>
-new TWTR.Widget({
-  version: 2,
-  type: 'search',
-  search: 'grumpy',
-  interval: 6000,
-  title: 'The world needs to learn to smile.',
-  subject: 'Grumpy!',
-  width: 250,
-  height: 300,
-  theme: {
-    shell: {
-      background: '#23126f',
-      color: '#ffffff'
+<div class="span-5">
+  <h1>Hello</h1>
+  <h2>Hello</h2>
+  <h3>Hello</h3>
+  <h4>Hello</h4>
+  <p>Paragraph content looks something like this.</p>
+</div>
+<div class="span-4 last">
+  <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+  <script>
+  new TWTR.Widget({
+    version: 2,
+    type: 'search',
+    search: 'grumpy',
+    interval: 6000,
+    title: 'The world needs to learn to smile.',
+    subject: 'Grumpy!',
+    width: 250,
+    height: 300,
+    theme: {
+      shell: {
+        background: '#23126f',
+        color: '#ffffff'
+      },
+      tweets: {
+        background: '#ffffff',
+        color: '#444444',
+        links: '#a62dd5'
+      }
     },
-    tweets: {
-      background: '#ffffff',
-      color: '#444444',
-      links: '#a62dd5'
+    features: {
+      scrollbar: false,
+      loop: true,
+      live: true,
+      hashtags: true,
+      timestamp: true,
+      avatars: true,
+      behavior: 'default'
     }
-  },
-  features: {
-    scrollbar: false,
-    loop: true,
-    live: true,
-    hashtags: true,
-    timestamp: true,
-    avatars: true,
-    behavior: 'default'
-  }
-}).render().start();
-</script>
+  }).render().start();
+  </script>
+</div>
