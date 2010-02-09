@@ -9,11 +9,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100209200047) do
+ActiveRecord::Schema.define(:version => 20100209202550) do
 
   create_table "grams", :force => true do |t|
     t.string   "name",       :limit => 64
     t.string   "slogan"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sent_grams", :force => true do |t|
+    t.string   "to_name",    :limit => 32
+    t.string   "from_name",  :limit => 32
+    t.string   "to_email"
+    t.string   "from_email"
+    t.string   "message"
+    t.integer  "gram_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

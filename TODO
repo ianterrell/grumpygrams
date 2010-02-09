@@ -1,0 +1,10 @@
+Controllers:
+	/admin/grams_controller			CRUD for grams
+	/sent_grams_controller			create and send a new gram
+	    routes
+	      REST   map.resources :sent_grams
+	
+Models:
+	/sent_grams_mailer				  mailer to send out confirmation email to sender
+	                            and notification email to recipient
+	/sent_grams_observer
