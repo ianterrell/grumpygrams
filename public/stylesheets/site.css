@@ -16,6 +16,7 @@ a:hover { color: #5719b3; text-decoration: underline; }
 #content h2 { color: #ccc; }
 #content h3 { color: #ddd; }
 #content h4 { color: #eee; }
+#content a { color: #a62dd5; }
 
 
 #header { margin: 20px 0px 7px 0px; }
