@@ -9,9 +9,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100209221342) do
+ActiveRecord::Schema.define(:version => 20100209222103) do
 
-  create_table "gram_template", :force => true do |t|
+  create_table "gram_templates", :force => true do |t|
     t.string   "name",       :limit => 64
     t.string   "slogan"
     t.datetime "created_at"
