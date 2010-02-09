@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.resources :grams
+  map.resources :gram_templates, :grams
 
   map.root :controller => "main"
   
