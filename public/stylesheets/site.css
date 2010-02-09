@@ -1,0 +1,45 @@
+* { margin: 0; }
+html, body { height: 100%; }
+#wrapper { min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -40px; }
+#footer, #push { height: 40px; }
+
+a { color: #5719b3; text-decoration: none; }
+a:hover { color: #5719b3; text-decoration: underline; }
+
+#outermost-content { width: 965px; min-height: 400px; }
+#content { border: 1px solid #ddd; background-color: #fff; padding: 20px; margin-bottom: 20px; -moz-border-radius: 4px; -webkit-border-radius: 4px; }
+#footer { width: 100%; background-color: #fff; padding-top: 10px; }
+
+#header { margin-bottom: 10px; }
+#header h1 { color: #333; font-size: 24px; margin: 0px; padding-top: 10px; }
+#header h2 { color: #666; font-size: 18px; margin: 0px; }
+
+/* -------------------- Flash ----------------------*/
+.flash{ width: 100%; padding:10px 10px 10px 30px; margin-bottom: 10px; -moz-border-radius: 4px; -webkit-border-radius: 4px; }
+.flash a { text-decoration: underline; }
+.flash a.close { display:block; margin-top: 1px; float:right; text-decoration:none; text-align:center; }
+.flash a:hover { background: none; }
+.error, .notice, .success { border:1px solid #ddd; }
+.error { background:#FBE3E4 url(/images/icons/coquette/16x16/delete.png) 7px 50% no-repeat; color:#8a1f11; border-color:#FBC2C4;  }
+.notice { background:#FFF6BF url(/images/icons/coquette/16x16/warning.png) 7px 50% no-repeat; color:#514721; border-color:#FFD324;  }
+.success { background:#D1FF9C url(/images/icons/coquette/16x16/accept.png) 7px 50% no-repeat; color:#264409; border-color:#C6D880;  }
+.error a { color:#8a1f11; }
+.notice a { color:#514721; }
+.success a { color:#264409; }
+
+/* Forms */
+input { outline: none; }
+input[type=submit] { cursor: pointer; border: 1px solid #4dbbf4; background-color: #b3def4; padding: 7px; font-weight: bold; color: #222; -moz-border-radius: 4px; -webkit-border-radius: 4px; }
+input[type=submit]:hover { background-color: #4dbbf4;  }
+input.birthday { width: 150px; }
+
+/* Form Errors */
+.errorExplanation { border: 1px solid #f00; background-color: #ffe9e9; padding: 10px; margin-bottom: 20px; }
+.errorExplanation h2 { font-size: 18px; color: #c00; }
+.errorExplanation p { margin: 0px; }
+.errorExplanation ul { margin: 0px; }
+.fieldWithErrors label { color: #c00; }
+.fieldWithErrors input { border-color: #f00; background-color: #ffe9e9;}
+.fieldWithErrors textarea { border-color: #f00; background-color: #ffe9e9;}
+.fieldWithErrors input:focus { border-color: #a00; }
+.formError { color: #c00; }
