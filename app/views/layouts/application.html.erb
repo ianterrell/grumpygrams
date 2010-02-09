@@ -14,10 +14,15 @@
     <%= stylesheet_link_merged :print, :media => "print" %>
     <!--[if lt IE 8]><%= stylesheet_link_merged :ie %><![endif]-->
     <%= javascript_include_merged :base %>
+    
+    <%= render :partial => "/layouts/google_ads_header" %>
   </head>
   <body>
     <div id="wrapper">
       <div id="outermost-content" class="container">
+        
+        <%= render :partial => "/layouts/google_ad", :locals => { :ad_name => "grumpygrams_top_leaderboard" } %>
+        
         <div id="header">
           <%= link_to "Send a GumpyGram", new_gram_path, :id => "send-a-grumpy-gram" %>
           <h1><%= link_to image_tag("logo.png"), root_path %></h1>
