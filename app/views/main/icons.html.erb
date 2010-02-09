@@ -1,0 +1,11 @@
+<% content_for :navigation do %>
+  <div id="navigation">
+    <h1>Icons</h1>
+  </div>
+<% end %>
+
+<% Dir.entries(RAILS_ROOT + "/public/images/icons").select{|x|x.starts_with?('coquette')}.each do |coquette| %>
+  <% Dir.entries(RAILS_ROOT + "/public/images/icons/#{coquette}/64x64").select{|x|x.ends_with?('png')}.each do |icon| %>
+    <%= image_tag "icons/#{coquette}/64x64/#{icon}" %>
+  <% end %>
+<% end %>

@@ -12,9 +12,12 @@ a:hover { color: #5719b3; text-decoration: underline; }
 #content { border: 1px solid #16003B; background-color: #fff; padding: 20px; margin-bottom: 20px; -moz-border-radius: 4px; -webkit-border-radius: 4px; }
 #footer { width: 100%; background-color: #0D0024; color: #999; padding-top: 10px; }
 
-#header { margin: 20px 0px; }
+#header { margin: 20px 0px 7px 0px; }
 #header h1 { color: #333; font-size: 24px; margin: 0px; padding: 0px; }
 #header h2 { color: #666; font-size: 18px; margin: 0px; }
+
+#send-a-grumpy-gram { font-weight: bold; float: right; font-size: 20px; padding: 5px 10px 5px 45px; background:#23126f url(/images/icons/coquette/32x32/mail_send.png) 7px 50% no-repeat; border: 3px solid #a62dd5; color: #a62dd5; -moz-border-radius: 8px; -webkit-border-radius: 8px; }
+#send-a-grumpy-gram img { vertical-align: bottom; }
 
 /* -------------------- Flash ----------------------*/
 .flash{ width: 100%; padding:10px 10px 10px 30px; margin-bottom: 10px; -moz-border-radius: 4px; -webkit-border-radius: 4px; }

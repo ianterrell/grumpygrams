@@ -3,7 +3,9 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :grams
 
   map.root :controller => "main"
-
+  
+  map.connect "/_icons", :controller => "main", :action => "icons"
+  
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
