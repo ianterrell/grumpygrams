@@ -9,7 +9,7 @@ a { color: #5719b3; text-decoration: none; }
 a:hover { color: #5719b3; text-decoration: underline; }
 
 #outermost-content { width: 965px; min-height: 400px; }
-#content { border: 1px solid #16003B; background-color: #fff; padding: 20px; margin-bottom: 20px; -moz-border-radius: 4px; -webkit-border-radius: 4px; }
+#content { border: 3px solid #a62dd5; background-color: #0b0623; background-image: url(/images/content-background.png); background-repeat: repeat-x; padding: 20px; margin-bottom: 20px; -moz-border-radius: 4px; -webkit-border-radius: 4px; }
 #footer { width: 100%; background-color: #0D0024; color: #999; padding-top: 10px; }
 
 #header { margin: 20px 0px 7px 0px; }
