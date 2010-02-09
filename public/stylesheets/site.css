@@ -3,15 +3,17 @@ html, body { height: 100%; }
 #wrapper { min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -40px; }
 #footer, #push { height: 40px; }
 
+body { background-color: #0D0024; background-image: url(/images/striped-background.png); }
+
 a { color: #5719b3; text-decoration: none; }
 a:hover { color: #5719b3; text-decoration: underline; }
 
 #outermost-content { width: 965px; min-height: 400px; }
-#content { border: 1px solid #ddd; background-color: #fff; padding: 20px; margin-bottom: 20px; -moz-border-radius: 4px; -webkit-border-radius: 4px; }
-#footer { width: 100%; background-color: #fff; padding-top: 10px; }
+#content { border: 1px solid #16003B; background-color: #fff; padding: 20px; margin-bottom: 20px; -moz-border-radius: 4px; -webkit-border-radius: 4px; }
+#footer { width: 100%; background-color: #0D0024; color: #999; padding-top: 10px; }
 
-#header { margin-bottom: 10px; }
-#header h1 { color: #333; font-size: 24px; margin: 0px; padding-top: 10px; }
+#header { margin: 20px 0px; }
+#header h1 { color: #333; font-size: 24px; margin: 0px; padding: 0px; }
 #header h2 { color: #666; font-size: 18px; margin: 0px; }
 
 /* -------------------- Flash ----------------------*/
