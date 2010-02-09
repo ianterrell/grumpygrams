@@ -1,0 +1,17 @@
+
+<h1>Available Grumpy Grams</h1>
+	<table>
+	<% @gram_templates.each do |gram_template| %>
+	<tr>
+		<td><%=h gram_template.name %></td>
+		<td><%=h gram_template.slogan %></td>
+		<td>
+			<%= link_to 'Edit', edit_gram_template_path(gram_template) %><br/> 
+			<%= link_to 'Delete', gram_template, :confirm => 'Are you sure?', :method => :delete %>
+		</td> 
+	</tr>
+	<% end %>
+	</table>
+ </div>
+
+<%= link_to 'Create a Grumpy Gram template', new_gram_template_path %>
