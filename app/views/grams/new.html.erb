@@ -1,36 +1,42 @@
 <h1>New Grumpy Gram</h1>
 
 <% form_for(@gram) do |f| %>
-  <%= f.error_messages %>
+  <%= f.error_message_on(:base) %>
 
   <p>
     <%= f.label :to_name %><br />
     <%= f.text_field :to_name %>
+    <%= f.error_message_on :to_name %>
   </p>
   
   <p>
     <%= f.label :from_name %><br />
     <%= f.text_field :from_name %>
+    <%= f.error_message_on :from_name %>
   </p>
   
   <p>
     <%= f.label :to_email %><br />
     <%= f.text_field :to_email %>
+    <%= f.error_message_on :to_email %>
   </p>
   
   <p>
     <%= f.label :from_email %><br />
     <%= f.text_field :from_email %>
+    <%= f.error_message_on :from_email %>
   </p>
   
   <p>
     <%= f.label :message %><br />
     <%= f.text_area :message, :cols => 20, :rows => 40 %>
+    <%= f.error_message_on :message %>
   </p>
   
   <p>
     <%= f.label 'Choose your grumpy gram!' %><br />
     <%= f.select(:gram_template_id, GramTemplate.all.collect {|g| [g.name, g.id ]}) %>
+    <%= f.error_message_on :gram_template_id %>
   </p>
   
   <p>
