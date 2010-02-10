@@ -15,7 +15,7 @@ class Gram < ActiveRecord::Base
   validates_format_of :from_email, :with => Regex::EMAIL
   
   attr_protected :confirm_token, :show_token
-  after_create :generate_confirm_token, :send_confirmation_email
+  after_create :generate_tokens, :send_confirmation_email
   validates_uniqueness_of :confirm_token, :allow_nil => true, :message => "Must be unique"
   validates_uniqueness_of :show_token, :allow_nil => true, :message => "Must be unique"
   
@@ -25,7 +25,7 @@ private
     GramMailer.deliver_confirmation(self)
   end
   
-  def generate_confirm_token
+  def generate_tokens
     self.update_attribute :confirm_token, Digest::SHA1::hexdigest("#{to_email}#{from_email}#{id}")
     self.update_attribute :show_token, Digest::SHA1::hexdigest("#{id}#{from_email}#{to_email}")
   end
