@@ -470,12 +470,12 @@ html, body {height: 100%}
 #wrapper {min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -40px}
 #footer, #push {height: 40px}
 body {background-color: #210b1c; background-image: url(/images/striped-background.png)}
-a {color: #5719b3; text-decoration: none}
-a:hover {color: #5719b3; text-decoration: underline}
+a {color: #205399; text-decoration: none}
+a:hover {color: #205399; text-decoration: underline}
 #outermost-content {width: 965px; min-height: 400px}
-#content {font-weight: bold; border: 3px solid #7f5574; background-color: #cfcfcf; background-image: url(/images/content-background.png); background-repeat: repeat-x; padding: 20px; margin-bottom: 20px; -moz-border-radius: 4px; -webkit-border-radius: 4px}
+#content {font-weight: bold; border: 3px solid #7f5574; background-color: #efffdb; background-image: url(/images/content-background.png); background-repeat: repeat-x; padding: 20px; margin-bottom: 20px; -moz-border-radius: 4px; -webkit-border-radius: 4px}
 #footer {width: 100%; background-color: #210b1c; color: #999; padding-top: 10px}
-#content a {color: #7f5574}
+#content a {color: #205399}
 #header {margin: 20px 0px 7px 0px}
 #header h1 {color: #333; font-size: 24px; margin: 0px; padding: 0px}
 #header h2 {color: #666; font-size: 18px; margin: 0px}
@@ -490,7 +490,7 @@ table.send-gram textarea {width: 100%; height: 20px}
 table.send-gram .submit-row {text-align: right}
 table.send-gram .formError {float: right}
  .grumpy-gram {width: 610px; height: 377px; background-color: #7f5574; margin-bottom: 20px}
-.grumpy-gram p {padding: 30px; font-size: 48px}
+.grumpy-gram p {padding: 30px; font-size: 48px; color: #a16c93;}
  .flash{ width: 100%; padding:10px 10px 10px 30px; margin-bottom: 10px; -moz-border-radius: 8px; -webkit-border-radius: 8px; font-weight: bold}
 .flash a {text-decoration: underline}
 .flash a.close {display:block; margin-top: 1px; float:right; text-decoration:none; text-align:center}
@@ -503,8 +503,8 @@ table.send-gram .formError {float: right}
 .notice a {color:#514721}
 .success a {color:#264409}
  input, textarea {outline: none}
-input[type=submit] {cursor: pointer; border: 1px solid #4dbbf4; background-color: #b3def4; padding: 7px; font-weight: bold; color: #222; -moz-border-radius: 4px; -webkit-border-radius: 4px}
-input[type=submit]:hover {background-color: #4dbbf4}
+input[type=submit] {cursor: pointer; border: 1px solid #281033; background-color: #7f5574; padding: 7px; font-weight: bold; color: #fff; -moz-border-radius: 4px; -webkit-border-radius: 4px}
+input[type=submit]:hover {background-color: #281033}
 input.birthday {width: 150px}
  .errorExplanation {border: 1px solid #f00; background-color: #ffe9e9; padding: 10px; margin-bottom: 20px}
 .errorExplanation h2 {font-size: 18px; color: #c00}

@@ -20,15 +20,14 @@ class Gram < ActiveRecord::Base
   
   validates_uniqueness_of :url_hash, :allow_nil => true, :message => "Must be unique"
   
-  def self.
+private
+
+  def send_confirmation_email
+    Confirmation.deliver_confirmation(self)
+  end
   
-  private
-    def generate_url_hash
-      self.url_hash = Digest.bubblebabble(Digest::SHA1::hexdigest(Gram.to_s + self.id.to_s)[8..12])
-      self.save
-    end
-    
-    def send_confirmation_email
-      Confirmation.deliver_confirmation(self)
-    end
+  def generate_url_hash
+    self.update_attribute :url_hash, Digest.bubblebabble(Digest::SHA1::hexdigest("#{to_email}#{from_email}#{id}"))
+  end
+
 end
