@@ -7,15 +7,19 @@ class GramsController < ApplicationController
     @gram = Gram.new params[:gram]
     
     if verify_recaptcha(@gram) && @gram.save
-      flash[:success] = 'Gram was successfully created.'
-      redirect_to @gram
+      flash[:success] = 'All good!  Check your email to confirm that you want to send this GrumpyGram!'
+      redirect_to root_path
     else
       render :action => 'new' # error shown in view
     end
   end
   
+  def show
+    @gram = Gram.find_by_show_token params[:id]
+  end
+  
   def confirm
-    @gram = Gram.find_by_url_hash params[:url_hash]
+    @gram = Gram.find_by_confirm_token params[:id]
     if @gram
       if @gram.confirmed?
         flash[:error] = 'This GrumpyGram has already been confirmed!'
@@ -25,20 +29,10 @@ class GramsController < ApplicationController
         @gram.confirmed = true
         @gram.save
         flash[:success] = "Confirmed!  Your Grumpy Gram has been sent to #{@gram.to_name}"
-        redirect_to @gram
+        redirect_to root_path
       end
     else
       flash[:error] = 'Invalid confirmation code'
-      redirect_to root_path
-    end
-  end
-  
-  def receive
-    @gram = Gram.find_by_url_hash params[:url_hash]
-    if @gram
-      redirect_to @gram
-    else
-      flash[:error] = 'Invalid GrumpyGram!'
       redirect_to root_path
     end
   end

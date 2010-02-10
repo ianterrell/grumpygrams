@@ -1,13 +1,11 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.resources :gram_templates, :grams
+  map.resources :gram_templates
+  map.resources :grams, :member => { :confirm => :get }
   
-  map.confirm_gram "/grams/confirm/:url_hash", :controller => "grams", :action => "confirm"
-  
-  map.receive_gram "/grams/receive/:url_hash", :controller => "grams", :action => "receive"
-
   map.root :controller => "main"
   
+  # TODO: Remove -- temporary --
   map.connect "/_icons", :controller => "main", :action => "icons"
   
   # The priority is based upon order of creation: first created -> highest priority.

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100210043512) do
+ActiveRecord::Schema.define(:version => 20100210051504) do
 
   create_table "gram_templates", :force => true do |t|
     t.string   "name",       :limit => 64
@@ -27,8 +27,9 @@ ActiveRecord::Schema.define(:version => 20100210043512) do
     t.integer  "gram_template_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "url_hash"
+    t.string   "confirm_token"
     t.boolean  "confirmed"
+    t.string   "show_token"
   end
 
 end

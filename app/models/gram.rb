@@ -1,8 +1,6 @@
 require 'digest/bubblebabble'
 
-class Gram < ActiveRecord::Base
-  attr_protected :url_hash
-  
+class Gram < ActiveRecord::Base  
   belongs_to :gram_template
   
   validates_presence_of :to_name, :to_email, :from_name, :from_email, :gram_template_id
@@ -16,9 +14,10 @@ class Gram < ActiveRecord::Base
   validates_format_of :to_email, :with => Regex::EMAIL
   validates_format_of :from_email, :with => Regex::EMAIL
   
-  after_create :generate_url_hash, :send_confirmation_email
-  
-  validates_uniqueness_of :url_hash, :allow_nil => true, :message => "Must be unique"
+  attr_protected :confirm_token, :show_token
+  after_create :generate_confirm_token, :send_confirmation_email
+  validates_uniqueness_of :confirm_token, :allow_nil => true, :message => "Must be unique"
+  validates_uniqueness_of :show_token, :allow_nil => true, :message => "Must be unique"
   
 private
 
@@ -26,8 +25,9 @@ private
     GramMailer.deliver_confirmation(self)
   end
   
-  def generate_url_hash
-    self.update_attribute :url_hash, Digest.bubblebabble(Digest::SHA1::hexdigest("#{to_email}#{from_email}#{id}")[8..16])
+  def generate_confirm_token
+    self.update_attribute :confirm_token, Digest::SHA1::hexdigest("#{to_email}#{from_email}#{id}")
+    self.update_attribute :show_token, Digest::SHA1::hexdigest("#{id}#{from_email}#{to_email}")
   end
 
 end
