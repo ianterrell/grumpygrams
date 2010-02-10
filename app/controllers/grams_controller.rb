@@ -1,7 +1,9 @@
 class GramsController < ApplicationController
-  resource_controller
-  
   before_filter :get_gram_templates, :only => [:new, :create]
+  
+  def new
+    @gram = Gram.new :gram_template => GramTemplate.default_template
+  end
   
   def create
     @gram = Gram.new params[:gram]
@@ -12,10 +14,6 @@ class GramsController < ApplicationController
     else
       render :action => 'new' # error shown in view
     end
-  end
-  
-  def show
-    @gram = Gram.find_by_show_token params[:id]
   end
   
   def confirm
@@ -34,6 +32,10 @@ class GramsController < ApplicationController
       flash[:error] = 'Invalid confirmation code'
       redirect_to root_path
     end
+  end
+
+  def show
+    @gram = Gram.find_by_show_token! params[:id]
   end
 
 private

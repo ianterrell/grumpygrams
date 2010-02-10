@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
 
   map.resources :gram_templates
-  map.resources :grams, :member => { :confirm => :get }
+  map.resources :grams, :only => [:new, :create, :show], :member => { :confirm => :get }
   
   map.root :controller => "main"
   

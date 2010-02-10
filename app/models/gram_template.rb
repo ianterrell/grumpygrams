@@ -5,4 +5,8 @@ class GramTemplate < ActiveRecord::Base
   validates_length_of :name, :within => 3..64
   validates_length_of :slogan, :within => 3..255
   validates_uniqueness_of :name, :on => :create, :case_sensitive => false, :message => "Must have a unique name"
+  
+  def self.default_template
+    GramTemplate.find :first
+  end
 end
