@@ -16,13 +16,19 @@ class Gram < ActiveRecord::Base
   validates_format_of :to_email, :with => Regex::EMAIL
   validates_format_of :from_email, :with => Regex::EMAIL
   
-  after_create :generate_url_hash
+  after_create :generate_url_hash, :send_confirmation_email
   
   validates_uniqueness_of :url_hash, :allow_nil => true, :message => "Must be unique"
+  
+  def self.
   
   private
     def generate_url_hash
       self.url_hash = Digest.bubblebabble(Digest::SHA1::hexdigest(Gram.to_s + self.id.to_s)[8..12])
       self.save
+    end
+    
+    def send_confirmation_email
+      Confirmation.deliver_confirmation(self)
     end
 end

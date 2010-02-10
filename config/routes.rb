@@ -1,6 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
 
   map.resources :gram_templates, :grams
+  
+  map.connect "/grams/confirm/:url_hash", :controller => "grams", :action => "confirm"
 
   map.root :controller => "main"
   

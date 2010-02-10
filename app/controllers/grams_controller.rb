@@ -15,6 +15,17 @@ class GramsController < ApplicationController
     end
     
   end
+  
+  def confirm
+    @gram = Gram.find_by_url_hash(params[:url_hash])
+    if @gram
+      flash[:notice] = "Confirmed!  Your Grumpy Gram has been sent to #{@gram.to_name}"
+      redirect_to(@gram)
+    else
+      flash[:notice] = 'Invalid confirmation code'
+      redirect_to root_path
+    end
+  end
 
 private
   def get_gram_templates

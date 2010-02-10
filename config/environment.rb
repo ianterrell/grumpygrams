@@ -46,5 +46,5 @@ Rails::Initializer.run do |config|
   
   ENV['RECAPTCHA_PUBLIC_KEY']  = '6LdEGQsAAAAAAFm5gHlupxAH8X4uUlwr2WGJK5lK'
   ENV['RECAPTCHA_PRIVATE_KEY'] = '6LdEGQsAAAAAAJW5D8Bol-9xTEpmpauTb92KzAyn'
-              
+           
 end
