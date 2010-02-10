@@ -32,6 +32,8 @@ describe Gram do
   it { should_not allow_value("test@com").for(:from_email) }
   it { should_not allow_value("testemail.com").for(:from_email) }
   
+  it { should_not allow_mass_assignment_of(:url_hash) }
+  
   it "should generate a url hash when created" do
     u = Factory(:gram)
     u.url_hash.should be_nil
