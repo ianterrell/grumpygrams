@@ -1,0 +1,9 @@
+Hi <%= @gram.from_name %>!
+
+Thanks for choosing to send <%= @gram.to_name %> a Grumpy Gram!  Please click the following link to confirm that you intended to send this.
+
+<%= confirm_gram_url :url_hash => @gram.url_hash %>
+
+Thanks!
+
+Grumpy Grams

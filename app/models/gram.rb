@@ -23,11 +23,11 @@ class Gram < ActiveRecord::Base
 private
 
   def send_confirmation_email
-    Confirmation.deliver_confirmation(self)
+    GramMailer.deliver_confirmation(self)
   end
   
   def generate_url_hash
-    self.update_attribute :url_hash, Digest.bubblebabble(Digest::SHA1::hexdigest("#{to_email}#{from_email}#{id}"))
+    self.update_attribute :url_hash, Digest.bubblebabble(Digest::SHA1::hexdigest("#{to_email}#{from_email}#{id}")[8..16])
   end
 
 end

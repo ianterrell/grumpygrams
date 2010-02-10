@@ -1,5 +1,5 @@
 development:
-  :fqdn: mycomputer.com:4000
+  :fqdn: localhost:3000
 
 test:
   :fqdn: localhost:3000

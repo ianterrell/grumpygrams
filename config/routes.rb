@@ -3,6 +3,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :gram_templates, :grams
   
   map.confirm_gram "/grams/confirm/:url_hash", :controller => "grams", :action => "confirm"
+  
+  map.receive_gram "/grams/receive/:url_hash", :controller => "grams", :action => "receive"
 
   map.root :controller => "main"
   
