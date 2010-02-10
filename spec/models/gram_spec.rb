@@ -11,7 +11,6 @@ describe Gram do
   it { should validate_presence_of(:from_name) }
   it { should validate_presence_of(:to_email) }
   it { should validate_presence_of(:from_email) }
-  it { should validate_presence_of(:message) }
   it { should validate_presence_of(:gram_template_id) }
   
   it { should ensure_length_of(:to_name).is_at_least(3).is_at_most(32) }

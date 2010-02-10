@@ -1,0 +1,10 @@
+development:
+  :fqdn: mycomputer.com:4000
+
+test:
+  :fqdn: localhost:3000
+  
+production:
+  :fqdn: www.grumpygrams.com
+
+
