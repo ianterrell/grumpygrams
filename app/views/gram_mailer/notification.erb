@@ -1,0 +1,9 @@
+Hi <%= @gram.to_name %>!
+
+<%= @gram.from_name %> thinks you deserve a GrumpyGram!  Please click the following link to view your very own GrumpyGram:
+
+<%= receive_gram_url :url_hash => @gram.url_hash %>
+
+Thanks!
+
+Grumpy Grams

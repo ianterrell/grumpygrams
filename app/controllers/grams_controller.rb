@@ -16,11 +16,29 @@ class GramsController < ApplicationController
   
   def confirm
     @gram = Gram.find_by_url_hash params[:url_hash]
+    if @gram.confirmed
+      flash[:error] = 'This GrumpyGram has already been confirmed'
+      redirect_to root_path
+    else
+      if @gram
+        GramMailer.deliver_notification(@gram)
+        @gram.confirmed = true
+        @gram.save
+        flash[:success] = "Confirmed!  Your Grumpy Gram has been sent to #{@gram.to_name}"
+        redirect_to @gram
+      else
+        flash[:error] = 'Invalid confirmation code'
+        redirect_to root_path
+      end
+    end
+  end
+  
+  def receive
+    @gram = Gram.find_by_url_hash params[:url_hash]
     if @gram
-      flash[:success] = "Confirmed!  Your Grumpy Gram has been sent to #{@gram.to_name}"
       redirect_to @gram
     else
-      flash[:error] = 'Invalid confirmation code'
+      flash[:error] = 'Invalid GrumpyGram!'
       redirect_to root_path
     end
   end
