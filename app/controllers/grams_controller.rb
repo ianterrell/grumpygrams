@@ -26,8 +26,7 @@ class GramsController < ApplicationController
         redirect_to root_path
       else
         GramMailer.deliver_notification(@gram)
-        @gram.confirmed = true
-        @gram.save
+        @gram.update_attribute :confirmed, true
         flash[:success] = "Confirmed!  Your Grumpy Gram has been sent to #{@gram.to_name}"
         redirect_to root_path
       end
