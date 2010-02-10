@@ -3,33 +3,30 @@ html, body { height: 100%; }
 #wrapper { min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -40px; }
 #footer, #push { height: 40px; }
 
-body { background-color: #0D0024; background-image: url(/images/striped-background.png); }
+body { background-color: #210b1c; background-image: url(/images/striped-background.png); }
 
 a { color: #5719b3; text-decoration: none; }
 a:hover { color: #5719b3; text-decoration: underline; }
 
 #outermost-content { width: 965px; min-height: 400px; }
-#content { color: #ddd; font-weight: bold; border: 3px solid #a62dd5; background-color: #0b0623; background-image: url(/images/content-background.png); background-repeat: repeat-x; padding: 20px; margin-bottom: 20px; -moz-border-radius: 4px; -webkit-border-radius: 4px; }
-#footer { width: 100%; background-color: #0D0024; color: #999; padding-top: 10px; }
+#content { font-weight: bold; border: 3px solid #7f5574; background-color: #cfcfcf; background-image: url(/images/content-background.png); background-repeat: repeat-x; padding: 20px; margin-bottom: 20px; -moz-border-radius: 4px; -webkit-border-radius: 4px; }
+#footer { width: 100%; background-color: #210b1c; color: #999; padding-top: 10px; }
 
-#content h1 { color: #ccc; }
-#content h2 { color: #ccc; }
-#content h3 { color: #ddd; }
-#content h4 { color: #eee; }
-#content a { color: #a62dd5; }
+
+#content a { color: #7f5574; }
 
 #header { margin: 20px 0px 7px 0px; }
 #header h1 { color: #333; font-size: 24px; margin: 0px; padding: 0px; }
 #header h2 { color: #666; font-size: 18px; margin: 0px; }
 
-#send-a-grumpy-gram { font-weight: bold; float: right; font-size: 20px; margin-right: -6px; padding: 5px 10px 5px 42px; background:#23126f url(/images/icons/coquette/32x32/mail_send.png) 5px 50% no-repeat; border: 3px solid #a62dd5; color: #a62dd5; -moz-border-radius: 8px; -webkit-border-radius: 8px; }
+#send-a-grumpy-gram { font-weight: bold; float: right; font-size: 20px; margin-right: -6px; padding: 5px 10px 5px 42px; background:#281033 url(/images/icons/coquette/32x32/mail_send.png) 5px 50% no-repeat; border: 3px solid #7f5574; color: #7f5574; -moz-border-radius: 8px; -webkit-border-radius: 8px; }
 
 .ad { width: 100%; text-align: center; }
 
 /* Creating a grumpy gram */
-.choose-your-template { background-color: #a62dd5; -moz-border-radius: 8px; -webkit-border-radius: 8px; padding: 10px; }
+.choose-your-template { background-color: #7f5574; -moz-border-radius: 8px; -webkit-border-radius: 8px; padding: 10px; }
 .choose-your-template h2 { font-size: 18px; font-weight: bold; color: #fff!important; }
-.choose-your-template .gram-template-preview { background-color: #150c42; padding: 10px; -moz-border-radius: 4px; -webkit-border-radius: 4px; cursor: pointer; margin-bottom: 10px; }
+.choose-your-template .gram-template-preview { color: #ddd; background-color: #281033; padding: 10px; -moz-border-radius: 4px; -webkit-border-radius: 4px; cursor: pointer; margin-bottom: 10px; }
 table.send-gram .name-email-row label { display: block; float: left; width: 80px; }
 table.send-gram .name-email-row input { margin-top: 0px; width: 200px; height: 28px; padding: 3px; font-size: 20px; }
 table.send-gram textarea { width: 100%; height: 20px; }
@@ -37,7 +34,7 @@ table.send-gram .submit-row { text-align: right; }
 table.send-gram .formError { float: right; }
 
 /* The Gram itself */
-.grumpy-gram { width: 610px; height: 377px; background-color: #a62dd5; margin-bottom: 20px; }
+.grumpy-gram { width: 610px; height: 377px; background-color: #7f5574; margin-bottom: 20px; }
 .grumpy-gram p { padding: 30px; font-size: 48px; }
 
 /* -------------------- Flash ----------------------*/
@@ -45,7 +42,7 @@ table.send-gram .formError { float: right; }
 .flash a { text-decoration: underline; }
 .flash a.close { display:block; margin-top: 1px; float:right; text-decoration:none; text-align:center; }
 .flash a:hover { background: none; }
-.error, .notice, .success { border:3px solid #a62dd5; }
+.error, .notice, .success { border:3px solid #7f5574; }
 .error { background:#E477CC url(/images/icons/coquette/16x16/delete.png) 7px 50% no-repeat; color:#8a1f11; border-color:#bf382a; }
 .notice { background:#E4C577 url(/images/icons/coquette/16x16/warning.png) 7px 50% no-repeat; color:#514721; border-color:#e39f20; }
 .success { background:#CCE477 url(/images/icons/coquette/16x16/accept.png) 7px 50% no-repeat; color:#264409; border-color:#9cc22b; }
