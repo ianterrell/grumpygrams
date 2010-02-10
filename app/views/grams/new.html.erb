@@ -1,45 +1,43 @@
-<h1>New Grumpy Gram</h1>
+<div class="span-3">
+  <div class="choose-your-template">
+    <h2>Choose your Grumpy Gram</h2>
+    
+    <% @gram_templates.each do |template| %>
+      <%= render :partial => "/gram_templates/preview", :locals => { :gram_template => template } %>
+    <% end %>
+  </div>
+</div>
 
-<% form_for(@gram) do |f| %>
-  <%= f.error_message_on(:base) %>
-
-  <p>
-    <%= f.label :to_name %><br />
-    <%= f.text_field :to_name %>
-    <%= f.error_message_on :to_name %>
-  </p>
+<div class="span-6 last">
+  <div class="grumpy-gram">
+    <p>Preview of grumpy gram here!</p>
+  </div>
   
-  <p>
-    <%= f.label :from_name %><br />
-    <%= f.text_field :from_name %>
-    <%= f.error_message_on :from_name %>
-  </p>
-  
-  <p>
-    <%= f.label :to_email %><br />
-    <%= f.text_field :to_email %>
-    <%= f.error_message_on :to_email %>
-  </p>
-  
-  <p>
-    <%= f.label :from_email %><br />
-    <%= f.text_field :from_email %>
-    <%= f.error_message_on :from_email %>
-  </p>
-  
-  <p>
-    <%= f.label :message %><br />
-    <%= f.text_area :message, :cols => 20, :rows => 40 %>
-    <%= f.error_message_on :message %>
-  </p>
-  
-  <p>
-    <%= f.label 'Choose your grumpy gram!' %><br />
-    <%= f.select(:gram_template_id, GramTemplate.all.collect {|g| [g.name, g.id ]}) %>
-    <%= f.error_message_on :gram_template_id %>
-  </p>
-  
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
+  <% form_for @gram do |f| %>
+    <%= f.error_message_on(:base) %>
+    <%= f.hidden_field :gram_template_id %>
+    
+    <table class="send-gram">
+      <tr class="name-email-row">
+        <td><%= f.label :to_name, "Their name" %><%= f.text_field :to_name %><%= f.error_message_on :to_name %></td>
+        <td><%= f.label :from_name, "Your name" %><%= f.text_field :from_name %><%= f.error_message_on :from_name %></td>
+      </tr>
+      <tr class="name-email-row">
+        <td><%= f.label :to_email, "Their email" %><%= f.text_field :to_email %><%= f.error_message_on :to_email %></td>
+        <td><%= f.label :from_email, "Your email " %><%= f.text_field :from_email %><%= f.error_message_on :from_email %></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <%= f.label :message, "Your custom message" %>
+          <br /><%= f.text_area :message %>
+          <%= f.error_message_on :message %>
+        </td>
+      </tr>
+      <tr>
+        <td class="submit-row" colspan="2">
+          <%= f.submit 'Send your grumpy gram!' %>
+        </td>
+      </tr>
+    </table>
+  <% end %>
+</div>

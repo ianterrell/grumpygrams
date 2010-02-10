@@ -26,6 +26,20 @@ a:hover { color: #5719b3; text-decoration: underline; }
 
 .ad { width: 100%; text-align: center; }
 
+/* Creating a grumpy gram */
+.choose-your-template { background-color: #a62dd5; -moz-border-radius: 8px; -webkit-border-radius: 8px; padding: 10px; }
+.choose-your-template h2 { font-size: 18px; font-weight: bold; color: #fff!important; }
+.choose-your-template .gram-template-preview { background-color: #150c42; padding: 10px; -moz-border-radius: 4px; -webkit-border-radius: 4px; cursor: pointer; margin-bottom: 10px; }
+table.send-gram .name-email-row label { display: block; float: left; width: 80px; }
+table.send-gram .name-email-row input { margin-top: 0px; width: 200px; height: 28px; padding: 3px; font-size: 20px; }
+table.send-gram textarea { width: 100%; height: 20px; }
+table.send-gram .submit-row { text-align: right; }
+table.send-gram .formError { float: right; }
+
+/* The Gram itself */
+.grumpy-gram { width: 610px; height: 377px; background-color: #a62dd5; margin-bottom: 20px; }
+.grumpy-gram p { padding: 30px; font-size: 48px; }
+
 /* -------------------- Flash ----------------------*/
 .flash{ width: 100%; padding:10px 10px 10px 30px; margin-bottom: 10px; -moz-border-radius: 8px; -webkit-border-radius: 8px; font-weight: bold; }
 .flash a { text-decoration: underline; }
@@ -40,7 +54,7 @@ a:hover { color: #5719b3; text-decoration: underline; }
 .success a { color:#264409; }
 
 /* Forms */
-input { outline: none; }
+input, textarea { outline: none; }
 input[type=submit] { cursor: pointer; border: 1px solid #4dbbf4; background-color: #b3def4; padding: 7px; font-weight: bold; color: #222; -moz-border-radius: 4px; -webkit-border-radius: 4px; }
 input[type=submit]:hover { background-color: #4dbbf4;  }
 input.birthday { width: 150px; }
@@ -51,7 +65,7 @@ input.birthday { width: 150px; }
 .errorExplanation p { margin: 0px; }
 .errorExplanation ul { margin: 0px; }
 .fieldWithErrors label { color: #c00; }
-.fieldWithErrors input { border-color: #f00; background-color: #ffe9e9;}
-.fieldWithErrors textarea { border-color: #f00; background-color: #ffe9e9;}
+.fieldWithErrors input { border-color: #f00; background-color: #E79984;}
+.fieldWithErrors textarea { border-color: #f00; background-color: #E79984;}
 .fieldWithErrors input:focus { border-color: #a00; }
 .formError { color: #c00; }
