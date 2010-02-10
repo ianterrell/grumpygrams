@@ -31,4 +31,16 @@ describe Gram do
   it { should allow_value("test.email@email.com").for(:from_email) }
   it { should_not allow_value("test@com").for(:from_email) }
   it { should_not allow_value("testemail.com").for(:from_email) }
+  
+  it "should generate a url hash when created" do
+    u = Factory(:gram)
+    u.url_hash.should be_nil
+    u.save
+    u.url_hash.should_not be_nil
+  end
+  
+  describe "about the url hash" do
+    before { Factory.create(:gram) } # shoulda implementation of uniqueness matcher requires at least one row in db
+    it { should validate_uniqueness_of(:url_hash).with_message("Must be unique") }
+  end
 end
