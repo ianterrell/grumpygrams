@@ -1,0 +1,15 @@
+development:
+  :fqdn: mycomputer.com:3000
+  :auction_length: 7
+  :min_bid: 5
+
+test:
+  :fqdn: localhost:3000
+  :auction_length: 7
+  :min_bid: 5
+  
+production:
+  :fqdn: www.guestpostmarketplace.com
+  :auction_length: 7
+  :min_bid: 5
+
