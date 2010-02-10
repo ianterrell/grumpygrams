@@ -20,27 +20,24 @@
     <table class="send-gram">
       <tr class="name-email-row">
         <td><%= f.label :to_name, "Their name" %><%= f.text_field :to_name %><%= f.error_message_on :to_name %></td>
-        <td><%= f.label :from_name, "Your name" %><%= f.text_field :from_name %><%= f.error_message_on :from_name %></td>
+        <td class="right"><%= f.label :from_name, "Your name" %><%= f.text_field :from_name %><%= f.error_message_on :from_name %></td>
       </tr>
       <tr class="name-email-row">
         <td><%= f.label :to_email, "Their email" %><%= f.text_field :to_email %><%= f.error_message_on :to_email %></td>
-        <td><%= f.label :from_email, "Your email " %><%= f.text_field :from_email %><%= f.error_message_on :from_email %></td>
+        <td class="right"><%= f.label :from_email, "Your email " %><%= f.text_field :from_email %><%= f.error_message_on :from_email %></td>
       </tr>
       <tr>
         <td colspan="2">
-          <%= f.label :message, "Your custom message" %>
+          <%= f.label :message, "Your custom message <span>(optional)</span>" %>
           <br /><%= f.text_area :message %>
           <%= f.error_message_on :message %>
         </td>
       </tr>
       <tr>
-        <td colspan="2">
-          <%= recaptcha_tags %>
-        </td>
-      </tr>
-      <tr>
-        <td class="submit-row" colspan="2">
+        <td class="submit-column" colspan="2">
           <%= f.submit 'Send your grumpy gram!' %>
+          <label>Let's make sure you're not a grumpy robot</label>
+          <%= recaptcha_tags %>
         </td>
       </tr>
     </table>
