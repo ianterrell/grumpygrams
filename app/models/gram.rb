@@ -1,4 +1,8 @@
+require 'digest/bubblebabble'
+
 class Gram < ActiveRecord::Base
+  attr_protected :url_hash
+  
   belongs_to :gram_template
   
   validates_presence_of :to_name, :to_email, :from_name, :from_email, :message, :gram_template_id
@@ -11,4 +15,14 @@ class Gram < ActiveRecord::Base
   
   validates_format_of :to_email, :with => Regex::EMAIL
   validates_format_of :from_email, :with => Regex::EMAIL
+  
+  after_create :generate_url_hash
+  
+  validates_uniqueness_of :url_hash, :allow_nil => true, :message => "Must be unique"
+  
+  private
+    def generate_url_hash
+      self.url_hash = Digest.bubblebabble(Digest::SHA1::hexdigest(Gram.to_s + self.id.to_s)[8..12])
+      self.save
+    end
 end
