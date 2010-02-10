@@ -21,12 +21,12 @@ class GramsController < ApplicationController
     @gram = Gram.find_by_confirm_token params[:id]
     if @gram
       if @gram.confirmed?
-        flash[:error] = "This GrumpyGram has already been confirmed!"
+        flash[:error] = "This GrumpyGram has already been sent!"
         redirect_to root_path
       else
         GramMailer.deliver_notification(@gram)
         @gram.update_attribute :confirmed, true
-        flash[:success] = "Confirmed!  Your Grumpy Gram has been sent to #{@gram.to_name}"
+        flash[:success] = "Confirmed!  Your Grumpy Gram has been sent to #{@gram.to_name}."
         redirect_to root_path
       end
     else
