@@ -1,4 +1,4 @@
-require 'digest/bubblebabble'
+require 'digest/sha1'
 
 class Gram < ActiveRecord::Base  
   belongs_to :gram_template
