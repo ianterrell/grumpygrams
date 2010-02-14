@@ -5,9 +5,6 @@ ActionController::Routing::Routes.draw do |map|
   
   map.root :controller => "main"
   
-  # TODO: Remove -- temporary --
-  map.connect "/_icons", :controller => "main", :action => "icons"
-  
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

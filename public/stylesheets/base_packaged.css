@@ -479,7 +479,7 @@ a:hover {color: #205399; text-decoration: underline}
 #header {margin: 20px 0px 7px 0px}
 #header h1 {color: #333; font-size: 24px; margin: 0px; padding: 0px}
 #header h2 {color: #666; font-size: 18px; margin: 0px}
-#send-a-grumpy-gram {font-weight: bold; float: right; font-size: 20px; margin-right: -6px; padding: 5px 10px 5px 42px; background:#281033 url(/images/icons/coquette/32x32/mail_send.png) 5px 50% no-repeat; border: 3px solid #7f5574; color: #7f5574; -moz-border-radius: 8px; -webkit-border-radius: 8px}
+#send-a-grumpy-gram {font-weight: bold; float: right; font-size: 20px; margin-right: -6px; padding: 5px 10px 5px 42px; background:#281033 url(/images/coquette/32x32/mail_send.png) 5px 50% no-repeat; border: 3px solid #7f5574; color: #7f5574; -moz-border-radius: 8px; -webkit-border-radius: 8px}
 .ad {width: 100%; text-align: center}
  .choose-your-template {background-color: #7f5574; -moz-border-radius: 8px; -webkit-border-radius: 8px; padding: 10px}
 .choose-your-template h2 {font-size: 18px; font-weight: bold; color: #fff!important}
@@ -502,9 +502,9 @@ table.send-gram label span {color: #999}
 .flash a.close {display:block; margin-top: 1px; float:right; text-decoration:none; text-align:center}
 .flash a:hover {background: none}
 .error, .notice, .success {border:3px solid #7f5574}
-.error {background:#E477CC url(/images/icons/coquette/16x16/delete.png) 7px 50% no-repeat; color:#8a1f11; border-color:#bf382a}
-.notice {background:#E4C577 url(/images/icons/coquette/16x16/warning.png) 7px 50% no-repeat; color:#514721; border-color:#e39f20}
-.success {background:#CCE477 url(/images/icons/coquette/16x16/accept.png) 7px 50% no-repeat; color:#264409; border-color:#9cc22b}
+.error {background:#E477CC url(/images/coquette/16x16/delete.png) 7px 50% no-repeat; color:#8a1f11; border-color:#bf382a}
+.notice {background:#E4C577 url(/images/coquette/16x16/warning.png) 7px 50% no-repeat; color:#514721; border-color:#e39f20}
+.success {background:#CCE477 url(/images/coquette/16x16/accept.png) 7px 50% no-repeat; color:#264409; border-color:#9cc22b}
 .error a {color:#8a1f11}
 .notice a {color:#514721}
 .success a {color:#264409}
