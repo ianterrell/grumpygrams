@@ -18,6 +18,7 @@ coverage
 rdoc
 pkg
 doc
+tmp
 .yardoc
 log
 public/system
