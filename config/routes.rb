@@ -1,6 +1,7 @@
 Grumpygrams::Application.routes.draw do |map|
   
   root :to => "main#index"
+  resources :grams
     
   # The priority is based upon order of creation:
   # first created -> highest priority.
