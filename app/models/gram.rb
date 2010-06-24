@@ -1,3 +1,5 @@
+require 'paperclip'
+
 class Gram < ActiveRecord::Base
   has_many :gram_instances
   
