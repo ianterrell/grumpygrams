@@ -1,4 +1,7 @@
+
 class Gram < ActiveRecord::Base
+  include Paperclip
+  
   has_many :gram_instances
   
   has_attached_file :image, :styles => { :normal => "350x350", :thumb => "100x100" }, :default_style => :normal, :storage => :s3,
