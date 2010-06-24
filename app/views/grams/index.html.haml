@@ -3,3 +3,8 @@
     %li
       = gram.name
       = "(#{gram.phrase})"
+      = image_tag gram.image.url :thumb
+      = link_to 'Edit', edit_gram_path(gram)
+      = link_to 'Send', send_gram_path(gram)
+      
+= link_to 'New Gram', new_gram_path

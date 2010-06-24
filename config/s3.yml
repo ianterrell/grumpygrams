@@ -1,0 +1,14 @@
+development:
+    access_key_id: AKIAJ55GTXCAGZ3SSMCA
+    secret_access_key: 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
+    bucket: grumpygrams-dev
+
+test:
+    access_key_id: AKIAJ55GTXCAGZ3SSMCA
+    secret_access_key: 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
+    bucket: grumpygrams-test
+
+production:
+    access_key_id: AKIAJ55GTXCAGZ3SSMCA
+    secret_access_key: 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
+    bucket: grumpygrams

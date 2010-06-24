@@ -2,11 +2,10 @@ source 'http://rubygems.org'
 
 gem 'rails', ">= 3.0.0.beta4"
 
-# Facebook Connect integration gems
-gem 'devise', '>=1.1.rc2'
-gem 'facebooker', :git => 'http://github.com/joren/facebooker.git', :branch => 'rails3'
-gem 'devise_facebook_connectable', :git => 'http://github.com/jeffbozek/devise_facebook_connectable.git', :branch => 'rails3'
-gem 'paperclip'
+gem 'paperclip', :git => 'http://github.com/thoughtbot/paperclip.git'
+gem 'aws-s3'
+
+gem 'formtastic', :git => 'http://github.com/justinfrench/formtastic.git', :branch => 'rails3'
 
 gem "haml"
 
