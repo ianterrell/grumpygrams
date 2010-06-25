@@ -24,7 +24,7 @@ end
 gem 'sqlite3-ruby', :require => 'sqlite3', :group => [:development, :test]
 
 group :production do
-  #gem "pg"
+  gem "pg"
 end
 
 # Use unicorn as the web server
