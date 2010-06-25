@@ -1,5 +1,7 @@
 class GramInstancesController < ApplicationController
   
+  before_filter :require_user
+  
   def new
     @gram_instance = GramInstance.new
     @gram_instance.gram = Gram.find params[:id]
