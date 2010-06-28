@@ -9,7 +9,7 @@ gem 'formtastic', :git => 'http://github.com/justinfrench/formtastic.git', :bran
 
 gem 'authlogic', :git => 'http://github.com/binarylogic/authlogic.git'
 
-gem 'mini_fb'
+gem 'mini_fb', :git => 'http://github.com/appoxy/mini_fb.git'
 gem 'json'
 
 gem "haml"

@@ -1,3 +1,9 @@
 - semantic_form_for @gram_instance do |form|
-  = form.inputs 
+  = form.inputs
+  %ul
+    - @friends.each do |friend|
+      %li
+        = image_tag profile_pic_url friend[:id]
+        = "#{friend[:name]}"
+      
   = form.buttons 

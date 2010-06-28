@@ -1,3 +1,5 @@
+require 'mini_fb'
+
 class GramInstancesController < ApplicationController
   
   before_filter :require_user
@@ -5,6 +7,8 @@ class GramInstancesController < ApplicationController
   def new
     @gram_instance = GramInstance.new
     @gram_instance.gram = Gram.find params[:id]
+    friends_hash = MiniFB.get(current_user.access_token, "me", :type => 'friends')
+    @friends = friends_hash[:data]
   end
   
   def create

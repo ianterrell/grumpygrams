@@ -4,10 +4,11 @@ class CreateUsers < ActiveRecord::Migration
       
       t.integer :facebook_uid
       t.string :email
-      t.string :username
+      t.string :facebook_username
       t.string :name
       t.string :first_name
       t.string :last_name
+      t.string    :persistence_token,   :null => false                # required
       # Magic columns, just like ActiveRecord's created_at and updated_at. These are automatically maintained by Authlogic if they are present.
       t.integer   :login_count,         :null => false, :default => 0 # optional, see Authlogic::Session::MagicColumns
       t.integer   :failed_login_count,  :null => false, :default => 0 # optional, see Authlogic::Session::MagicColumns
