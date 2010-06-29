@@ -3,7 +3,6 @@ jQuery(function ($) {
     FB.init({appId: 'fd577fc6f9d8d122717f0fdd6112e234', status: true, cookie: true, xfbml: false});
     FB.getLoginStatus();
     
-    
     $(".scrollable").scrollable();
 
     $(".items img").click(function() {
@@ -46,19 +45,60 @@ jQuery(function ($) {
 
 var currentSession;
 var currentUser;
+var currentUsersFriends;
 
 FB.Event.subscribe('auth.sessionChange', function(response) {
   if (response.session) {
     currentSession = response.session;
     FB.api('/me', function(response) { currentUser = response; });
-    $('#login-inner').fadeOut('slow', function() {
-      $('#login-inner').html('<img src="http://graph.facebook.com/' + currentSession.uid + '/picture" class="profile">Logged in as <span>' + currentUser.name + '</span>.<br/><a href="#" onclick="logout(); return false;">Logout of Facebook</a>').fadeIn('slow');
+    $('#login').fadeOut('slow', function() {
+      $('#login').html('<img src="http://graph.facebook.com/' + currentSession.uid + '/picture" class="profile">Logged in as <span>' + currentUser.name + '</span>.<br/><a href="#" onclick="logout(); return false;">Logout of Facebook</a>').fadeIn('slow');
     });
+    FB.api('/me/friends', function(response) { 
+      currentUsersFriends = response;
+      $('#friend').autocomplete({
+      			minLength: 0,
+      			delay: 0,
+      			source: function(request, response) {
+              var matcher = new RegExp(request.term, "i");
+              var matches = [];
+              $(currentUsersFriends.data).each(function() {
+                if (this.name && (!request.term || matcher.test(this.name)))
+                  matches.push({
+                    id: this.id,
+                    name: this.name,
+                    label: this.name.replace(new RegExp("(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(request.term) + ")(?![^<>]*>)(?![^&;]+;)", "gi"), "<strong>$1</strong>"),
+                  });
+              });
+              response(matches);
+            },
+      			focus: function(event, ui) {
+      				$('#project').val(ui.item.label);
+      				return false;
+      			},
+      			select: function(event, ui) {
+      				$('#friend').val(ui.item.name);
+      				$('#recipient_uid').val(ui.item.id);
+              // $('#friend-description').html(ui.item.name);
+      				$('#friend-avatar').attr('src', 'http://graph.facebook.com/' + ui.item.id + '/picture');
+
+      				return false;
+      			}
+      		})
+      		.data( "autocomplete" )._renderItem = function( ul, item ) {
+      			return $( "<li></li>" )
+      				.data( "item.autocomplete", item )
+      				.append( '<a><img src="http://graph.facebook.com/' + item.id + '/picture">' + item.label + "</a>" )
+      				.appendTo( ul );
+      		};
+    });
+    
   } else {
     currentSession = null;
     currentUser = null;
-    $('#login-inner').fadeOut('slow', function() {
-      $('#login-inner').html('<a href="#" onclick="login(); return false;"><img src="/images/fb-login-button.png"></a>').fadeIn('slow');
+    currentUsersFriends = null;
+    $('#login').fadeOut('slow', function() {
+      $('#login').html('<a href="#" onclick="login(); return false;"><img src="/images/fb-login-button.png"></a>').fadeIn('slow');
     });
   }
 });

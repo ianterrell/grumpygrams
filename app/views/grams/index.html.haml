@@ -1,3 +1,10 @@
+#send-form
+  %h3= "Send this gram"
+  %form
+    %input#friend
+    %input#recipient_uid{:type=>"hidden"}
+    %img#friend-avatar{:src => "http://static.flowplayer.org/tools/img/blank.gif", :width => 50, :height => 50 }
+
 #image_wrap
   %img{:src => "http://static.flowplayer.org/tools/img/blank.gif", :width => 620, :height => 360 }
 

@@ -7,12 +7,13 @@ body { background-color: #210b1c; background-image: url(/images/striped-backgrou
 #top { width: 100%; height: 10px; background: #3b5998; border-bottom: 1px solid #1d2a5b;}
 
 #login { background: #3b5998; padding: 5px 10px; position: absolute; right: -15px; top: -1px; border: 1px solid #1d2a5b; border-top: none;  text-align: center; color: #fff; -moz-border-radius-bottomleft: 8px; -webkit-border-bottom-left-radius: 8px; -moz-border-radius-bottomright: 8px; -webkit-border-bottom-right-radius: 8px; }
-#login-inner { font-size: 12px; }
-#login-inner a { color: #aaa; }
-#login-inner span { font-weight: bold; }
-#login-inner img.profile { float: left; }
+#login { font-size: 12px; }
+#login a { color: #aaa; }
+#login span { font-weight: bold; }
+#login img.profile { float: left; }
 
-#header { }
+#send-form { position: absolute; color: #fff; width: 330px; right: 10px; background: #3b5998; border: 1px solid #1d2a5b; -moz-border-radius: 8px; -webkit-border-radius: 8px; }
+#ui-active-menuitem { background: #fff; }
 
 .clearfix { clear: both; }
 

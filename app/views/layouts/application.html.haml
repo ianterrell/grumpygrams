@@ -7,7 +7,7 @@
     %script{:type => "text/javascript", :src  => "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"}
     %script{:type => "text/javascript", :src  => "http://cdn.jquerytools.org/1.2.3/tiny/jquery.tools.min.js"}
     %script{:type => "text/javascript", :src  => "http://connect.facebook.net/en_US/all.js"}
-    = javascript_include_tag "rails", "application"
+    = javascript_include_tag "jquery-ui-1.8.2.custom.min", "rails", "application"
     = csrf_meta_tag
     
   %body  
@@ -15,10 +15,7 @@
     #top
     #content
       #login
-        = image_tag 'powered-by-facebook.png'
-        %br
-        #login-inner
-          = link_to image_tag('fb-login-button.png'), "#", :onclick => "login(); return false;"
+        = link_to image_tag('fb-login-button.png'), "#", :onclick => "login(); return false;"
       #header
         = image_tag "logo.png"
       = yield
