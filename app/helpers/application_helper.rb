@@ -7,7 +7,7 @@ module ApplicationHelper
   end
   
   def profile_pic_url(uid)
-    "http://graph.facebook.com/" + uid.to_s + "/picture"
+    "http://graph.facebook.com/#{uid.to_s}/picture"
   end
   
   def oauth_url

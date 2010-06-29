@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
   helper :all
   protect_from_forgery
   layout 'application'
-  
   helper_method :current_user_session, :current_user
   
   private
