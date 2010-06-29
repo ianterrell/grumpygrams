@@ -3,6 +3,13 @@ jQuery(function ($) {
     FB.init({appId: 'fd577fc6f9d8d122717f0fdd6112e234', status: true, cookie: true, xfbml: false});
     FB.getLoginStatus();
     
+    $('#friend').focus(function(){
+      if ($(this).hasClass('initial')) {
+        $(this).val('');
+        $(this).removeClass('initial');
+      }
+    });
+    
     $(".scrollable").scrollable();
 
     $(".items img").click(function() {
@@ -10,13 +17,13 @@ jQuery(function ($) {
     	// see if same thumb is being clicked
     	if ($(this).hasClass("active")) { return; }
 
-    	// calclulate large image's URL based on the thumbnail URL (flickr specific)
+    	// calclulate large image's URL based on the thumbnail URL 
     	var url = $(this).attr("src").replace("thumb", "original");
 
     	// get handle to element that wraps the image and make it semi-transparent
     	var wrap = $("#image_wrap").fadeTo("medium", 0.5);
 
-    	// the large image from www.flickr.com
+    	// the large image
     	var img = new Image();
 
 

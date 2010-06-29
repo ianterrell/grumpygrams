@@ -1,9 +1,9 @@
 #send-form
-  %h3= "Send this gram"
   %form
-    %input#friend
+    = image_tag "no-one.png", :id => "friend-avatar", :width => 50, :height => 50
+    %label= "Who's acting grumpy?"
+    %input#friend.initial{ :value => "enter a friend's name" }
     %input#recipient_uid{:type=>"hidden"}
-    %img#friend-avatar{:src => "http://static.flowplayer.org/tools/img/blank.gif", :width => 50, :height => 50 }
 
 #image_wrap
   %img{:src => "http://static.flowplayer.org/tools/img/blank.gif", :width => 620, :height => 360 }
