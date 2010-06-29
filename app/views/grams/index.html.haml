@@ -9,13 +9,6 @@
       = gram.name
       = "(#{gram.phrase})"
       = image_tag gram.image.url :thumb
-      - if logged_in?
-        = link_to 'Edit', edit_gram_path(gram)
-        = link_to 'Send', send_gram_path(gram)
-        
-- if logged_in?      
-  = link_to 'New Gram', new_gram_path
-  
+
 - if !logged_in?
   = link_to 'Connect!', oauth_url
-

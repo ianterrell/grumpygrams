@@ -6,9 +6,30 @@
     = stylesheet_link_tag :all
     = javascript_include_tag "jquery-1.4.2.min", "rails", "application"
     = csrf_meta_tag
+    %script{:type => "text/javascript", :src  => "http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/en_US"}
     
   %body
-    %script{:type => "text/javascript", :src  => "http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/en_US"}
-    = yield
+    #top
+    #content
+      #login
+        - if !logged_in?
+          = image_tag 'powered-by-facebook.png'
+          %br
+          = link_to image_tag('fb-login-button.png'), oauth_url
+        - else
+          = "Sup?"
+      #header
+        = image_tag "logo.png"
+      = yield
     
-    <script type="text/javascript">  FB.init("fd577fc6f9d8d122717f0fdd6112e234", "/xd_receiver.htm"); </script>
+<div id="fb-root"></div>
+<script>
+FB.init({appId: 'fd577fc6f9d8d122717f0fdd6112e234', status: true, cookie: true, xfbml: false});
+FB.Event.subscribe('auth.sessionChange', function(response) {
+if (response.session) {
+alert("logged in");// A user has logged in, and a new cookie has been saved
+} else {
+alert("logged out");// The user has logged out, and the cookie has been cleared
+}
+});
+</script>
