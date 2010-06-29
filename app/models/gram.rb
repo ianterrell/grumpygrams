@@ -4,7 +4,7 @@ class Gram < ActiveRecord::Base
   
   has_many :gram_instances
   
-  has_attached_file :image, :styles => { :normal => "350x350", :thumb => "100x100" }, :default_style => :normal, :storage => :s3,
+  has_attached_file :image, :styles => { :thumb => "100x100" }, :storage => :s3,
       :s3_credentials => "#{RAILS_ROOT}/config/s3.yml", :path => ':class/:id/:style.:extension'
 
   validates_attachment_presence :image, :message => 'Please select an image'
