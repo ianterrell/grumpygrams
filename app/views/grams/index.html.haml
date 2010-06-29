@@ -1,21 +1,12 @@
+#image_wrap
+  %img{:src => "http://static.flowplayer.org/tools/img/blank.gif", :width => 620, :height => 360 }
 
-- if logged_in?
-  = image_tag profile_pic_url current_user.facebook_uid
-  = "Hi, #{current_user.name}!"
-  
-%ul 
-  - @grams.each do |gram|
-    %li
-      = gram.name
-      = "(#{gram.phrase})"
-      = image_tag gram.image.url :thumb
-      - if logged_in?
-        = link_to 'Edit', edit_gram_path(gram)
-        = link_to 'Send', send_gram_path(gram)
-        
-- if logged_in?      
-  = link_to 'New Gram', new_gram_path
-  
-- if !logged_in?
-  = link_to 'Connect!', oauth_url
-
+%a.prev.browse.left
+.scrollable
+  .items
+    - @grams.in_groups_of(4).each do |grams|
+      %div
+        - grams.each do |gram|
+          = image_tag gram.image.url(:thumb)
+%a.next.browse.right
+.clearfix

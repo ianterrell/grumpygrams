@@ -4,11 +4,21 @@
     %link{ :rel => "shortcut icon", :href => "/favicon.ico", :type => "image/x-icon"}/
     %title= "GrumpyGrams :: "+controller.controller_name.capitalize
     = stylesheet_link_tag :all
-    = javascript_include_tag "jquery-1.4.2.min", "rails", "application"
+    %script{:type => "text/javascript", :src  => "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"}
+    %script{:type => "text/javascript", :src  => "http://cdn.jquerytools.org/1.2.3/tiny/jquery.tools.min.js"}
+    %script{:type => "text/javascript", :src  => "http://connect.facebook.net/en_US/all.js"}
+    = javascript_include_tag "rails", "application"
     = csrf_meta_tag
     
-  %body
-    %script{:type => "text/javascript", :src  => "http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/en_US"}
-    = yield
-    
-    <script type="text/javascript">  FB.init("fd577fc6f9d8d122717f0fdd6112e234", "/xd_receiver.htm"); </script>
+  %body  
+    #fb-root
+    #top
+    #content
+      #login
+        = image_tag 'powered-by-facebook.png'
+        %br
+        #login-inner
+          = link_to image_tag('fb-login-button.png'), "#", :onclick => "login(); return false;"
+      #header
+        = image_tag "logo.png"
+      = yield
