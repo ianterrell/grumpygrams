@@ -5,21 +5,38 @@ jQuery(function ($) {
   });  
 });
 
+var currentSession;
+var currentUser;
+
 FB.Event.subscribe('auth.sessionChange', function(response) {
   if (response.session) {
-    alert("logged in");// A user has logged in, and a new cookie has been saved
+    currentSession = response.session;
+    FB.api('/me', function(response) { currentUser = response; });
+    $('#login-inner').fadeOut('slow', function() {
+      $('#login-inner').html('<img src="http://graph.facebook.com/' + currentSession.uid + '/picture" class="profile">Logged in as <span>' + currentUser.name + '</span>.<br/><a href="#" onclick="logout();">Logout of Facebook</a>').fadeIn('slow');
+    });
   } else {
-    alert("logged out");// The user has logged out, and the cookie has been cleared
+    currentSession = null;
+    currentUser = null;
+    $('#login-inner').fadeOut('slow', function() {
+      $('#login-inner').html('<a href="#" onclick="login();"><img src="/images/fb-login-button.png"></a>').fadeIn('slow');
+    });
   }
 });
 
 function login() {
   FB.login(function(response) {
     if (response.session) {
-      alert('success log in');// user successfully logged in
+      //alert('success log in');// user successfully logged in
     } else {
-      alert('cancelled login');// user cancelled login
+      //alert('cancelled login');// user cancelled login
     }
-  });
+  }, {perms:'publish_stream'});
   return false;
+}
+
+function logout() {
+  FB.logout(function(response) {
+    
+  });
 }

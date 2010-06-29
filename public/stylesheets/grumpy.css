@@ -1,12 +1,15 @@
 * { margin: 0px; padding: 0px; }
 
-body { background-color: #210b1c; background-image: url(/images/striped-background.png); }
+body { background-color: #210b1c; background-image: url(/images/striped-background.png); font-family: helvetica;}
 
 #content { padding: 10px; width: 960px; margin-left: auto; margin-right: auto; position: relative; background-color: #fff; background-image: url(/images/content-bg.png); -moz-border-radius-bottomleft: 8px; -webkit-border-bottom-left-radius: 8px; -moz-border-radius-bottomright: 8px; -webkit-border-bottom-right-radius: 8px; }
 
 #top { width: 100%; height: 10px; background: #3b5998; border-bottom: 1px solid #1d2a5b;}
 
 #login { background: #3b5998; padding: 5px 10px; position: absolute; right: -15px; top: -1px; border: 1px solid #1d2a5b; border-top: none;  text-align: center; color: #fff; -moz-border-radius-bottomleft: 8px; -webkit-border-bottom-left-radius: 8px; -moz-border-radius-bottomright: 8px; -webkit-border-bottom-right-radius: 8px; }
-
+#login-inner { font-size: 12px; }
+#login-inner a { color: #aaa; }
+#login-inner span { font-weight: bold; }
+#login-inner img.profile { float: left; }
 
 #header { }
