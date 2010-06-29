@@ -1,8 +1,9 @@
 - semantic_form_for @gram_instance do |form|
-  = form.inputs
+  = form.inputs :gram, :message
   %ul
     - @friends.each do |friend|
       %li
+        = radio_button_tag 'gram_instance[recipient_facebook_uid]', friend[:id]
         = image_tag profile_pic_url friend[:id]
         = "#{friend[:name]}"
       

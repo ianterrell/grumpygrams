@@ -17,7 +17,8 @@ class UserSessionsController < ApplicationController
     @user.last_name = @response_hash[:first_name]
     @user.email = @response_hash[:email]
     @user.access_token = @access_token
-    @user.save!
+    @user.save
+    UserSession.create(:facebook_uid => @user.facebook_uid.to_s, :access_token => @user.access_token )
     redirect_to :root
   end
 

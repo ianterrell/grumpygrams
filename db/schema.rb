@@ -9,17 +9,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100628171453) do
+ActiveRecord::Schema.define(:version => 20100629182051) do
 
   create_table "gram_instances", :force => true do |t|
-    t.string   "to_name"
-    t.string   "from_name"
-    t.string   "to_email"
-    t.string   "from_email"
     t.string   "message"
     t.integer  "gram_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "recipient_facebook_uid"
   end
 
   add_index "gram_instances", ["gram_id"], :name => "index_gram_instances_on_gram_id"
