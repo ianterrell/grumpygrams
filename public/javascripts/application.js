@@ -9,6 +9,12 @@ jQuery(function ($) {
         $(this).removeClass('initial');
       }
     });
+    $('#friend').blur(function(){
+      if ($(this).val() == "") {
+        $(this).val('enter a friend\'s name');
+        $(this).addClass('initial');
+      }
+    });
     
     $(".scrollable").scrollable();
 
