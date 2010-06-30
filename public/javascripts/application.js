@@ -15,6 +15,25 @@ jQuery(function ($) {
         $(this).addClass('initial');
       }
     });
+
+		$("#gram_instance_form").submit(function(){
+			FB.api('/' + $('#recipient_uid').val() + '/feed', 'post', 
+				{ message: $('#message').val(),
+				  picture: $("#" + $('#gram_id').val()).attr("src"),
+					link: "http://www.grumpygrams.com/",
+					caption: "This is a caption.",
+					description: "This is a description.",
+					name: "This is the name." 
+				}, 
+				function(response) {
+			  	if (!response || response.error) {
+				    alert('Error occured');
+				  } else {
+				    return true;
+				  }
+				}
+			);
+		});
     
     $(".scrollable").scrollable();
 
@@ -32,6 +51,8 @@ jQuery(function ($) {
     	// the large image
     	var img = new Image();
 
+			// grab the gram id
+			var gram = $(this).attr("id");
 
     	// call this function after it's loaded
     	img.onload = function() {
@@ -41,6 +62,9 @@ jQuery(function ($) {
 
     		// change the image
     		wrap.find("img").attr("src", url);
+
+				// set the form with gram id
+				$('#gram_id').val(gram);
 
     	};
 

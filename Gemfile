@@ -7,11 +7,6 @@ gem 'aws-s3'
 
 gem 'formtastic', :git => 'http://github.com/justinfrench/formtastic.git', :branch => 'rails3'
 
-gem 'authlogic', :git => 'http://github.com/binarylogic/authlogic.git'
-
-gem 'mini_fb', :git => 'http://github.com/appoxy/mini_fb.git'
-gem 'json'
-
 gem "haml"
 
 group :test do

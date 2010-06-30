@@ -1,9 +1,13 @@
 #send-form
-  %form
+  %form{:action => "#{root_path}", :method => "post", :id => "gram_instance_form"}
     = image_tag "no-one.png", :id => "friend-avatar", :width => 50, :height => 50
     %label= "Who's acting grumpy?"
     %input#friend.initial{ :value => "enter a friend's name" }
     %input#recipient_uid{:type=>"hidden"}
+    %input#gram_id{:type=>"hidden"}
+    %textarea#message
+    %input{:type=>"submit", :value=> "Send!"}
+    
 
 #image_wrap
   %img{:src => "http://static.flowplayer.org/tools/img/blank.gif", :width => 620, :height => 360 }
@@ -14,6 +18,8 @@
     - @grams.in_groups_of(4).each do |grams|
       %div
         - grams.each do |gram|
-          = image_tag gram.image.url(:thumb)
+          = image_tag gram.image.url(:thumb), {:id => gram.id}
 %a.next.browse.right
 .clearfix
+
+  
