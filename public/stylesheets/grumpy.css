@@ -1,11 +1,11 @@
 @font-face { font-family: Bigfish; src: url("/fonts/Bigfish.eot") /* EOT file for IE */ }
 @font-face { font-family: Bigfish; src: url("/fonts/Bigfish.ttf") /* TTF file for CSS3 browsers */ }
 
-h1 { font-family: Bigfish, serif; font-size: 64px;}
+#top-ad { background: #000; text-align: center; padding-bottom: 10px; }
 
-#fb-top { width: 100%; height: 10px; background: #3b5998; border-bottom: 1px solid #1d2a5b;}
+h1 { font-family: Bigfish, serif; font-size: 64px; margin: 0px; }
 
-#login { background: #3b5998; padding: 5px 10px; position: absolute; right: 0px; top: -1px; border: 1px solid #1d2a5b; border-top: none;  text-align: center; color: #fff; -moz-border-radius-bottomleft: 8px; -webkit-border-bottom-left-radius: 8px; -moz-border-radius-bottomright: 8px; -webkit-border-bottom-right-radius: 8px; }
+#login { background: #3b5998; padding: 5px 10px; position: absolute; right: 0px; top: 50px; border: 1px solid #1d2a5b; text-align: center; color: #fff; -moz-border-radius: 8px; -webkit-border-radius: 8px; }
 #login { font-size: 12px; }
 #login a { color: #aaa; }
 #login span { font-weight: bold; }

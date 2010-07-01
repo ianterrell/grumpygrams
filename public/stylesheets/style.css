@@ -15,7 +15,7 @@ body {
 	color: #FFFFFF; 
 	font-size:11px; 
 }
-#wrap {	background: url(/images/bg.png) repeat-x top center; }
+#wrap {	background: url(/images/bg-jagged.png) repeat-x top center; }
 
 #content .col-left {width: 700px;}
 
@@ -120,7 +120,7 @@ form#topSearch p.fields button {
 
 #header {
     float: left;
-    padding-top: 70px;
+    padding-top: 40px;
 	clear: both;
 	position: relative;
 	margin-bottom:25px;
