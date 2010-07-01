@@ -1,3 +1,8 @@
+@font-face { font-family: Groovy; src: url("/fonts/groovy.eot") /* EOT file for IE */ }
+@font-face { font-family: Groovy; src: url("/fonts/groovy.ttf") /* TTF file for CSS3 browsers */ }
+
+h1 { font-family: Groovy, serif; font-size: 64px;}
+
 #fb-top { width: 100%; height: 10px; background: #3b5998; border-bottom: 1px solid #1d2a5b;}
 
 #login { background: #3b5998; padding: 5px 10px; position: absolute; right: 0px; top: -1px; border: 1px solid #1d2a5b; border-top: none;  text-align: center; color: #fff; -moz-border-radius-bottomleft: 8px; -webkit-border-bottom-left-radius: 8px; -moz-border-radius-bottomright: 8px; -webkit-border-bottom-right-radius: 8px; }
