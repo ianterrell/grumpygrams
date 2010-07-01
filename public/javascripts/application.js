@@ -115,7 +115,7 @@ FB.Event.subscribe('auth.sessionChange', function(response) {
     FB.api('/me', function(response) { 
       currentUser = response; 
       showOrSwapLogin(function() {
-        $('#login').html('<img src="http://graph.facebook.com/' + currentSession.uid + '/picture" class="profile">Logged in as <span>' + currentUser.name + '</span>.<br/><a href="#" onclick="logout(); return false;">Logout of Facebook</a>').fadeIn('slow');
+        $('#login').html('<img src="http://graph.facebook.com/' + currentSession.uid + '/picture" class="profile">logged in as <span>' + currentUser.name + '</span><br/><a href="#" onclick="logout(); return false;" class="logout">Logout of <img src="/images/fb-favicon.png"></a>').fadeIn('slow');
       });
     });
     FB.api('/me/friends', function(response) { 
