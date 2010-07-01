@@ -4,7 +4,7 @@ jQuery(function ($) {
     FB.init({appId: 'fd577fc6f9d8d122717f0fdd6112e234', status: true, cookie: true, xfbml: false});
     FB.getLoginStatus();
     
-    $('#friend').focus(function(){
+    $('#friend,#message').focus(function(){
       if ($(this).hasClass('initial')) {
         $(this).val('');
         $(this).removeClass('initial');
@@ -13,6 +13,12 @@ jQuery(function ($) {
     $('#friend').blur(function(){
       if ($(this).val() == "") {
         $(this).val('enter a friend\'s name');
+        $(this).addClass('initial');
+      }
+    });
+    $('#message').blur(function(){
+      if ($(this).val() == "") {
+        $(this).val('add a note if you like!');
         $(this).addClass('initial');
       }
     });
