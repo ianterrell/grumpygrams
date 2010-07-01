@@ -11,17 +11,19 @@ h1 { font-family: Bigfish, serif; font-size: 64px; margin: 0px; }
 #login span { font-weight: bold; }
 #login img.profile { float: left; }
 
-#send-form { position: absolute; color: #fff; width: 259px; right: 20px; padding: 10px; background: #3b5998; border: 1px solid #1d2a5b; -moz-border-radius: 6px; -webkit-border-radius: 6px; }
+#send-form { position: absolute; color: #fff; width: 259px; right: 20px; padding: 10px; }
 #friend-avatar { float: left; margin-right: 10px; margin-bottom: 10px; }
-input { outline: none; border: none; width: 230px; margin-top: 8px; height: 24px; font-size: 18px; }
-input.initial { color: #aaa; }
+input, textarea { padding: 4px; outline: none; border: none; width: 230px; margin-top: 10px; height: 24px; font-size: 18px; -moz-border-radius: 3px; -webkit-border-radius: 3px;}
+textarea { height: 72px; }
+input.initial, textarea.initial { color: #aaa; font-size: 14px; }
+input[type=submit] { color: #FFFFFF; background: #660099; width: 165px; margin-top: 10px; height: 34px; border: 1px solid #550080; -moz-border-radius: 6px; -webkit-border-radius: 6px; }
 
 .ui-menu-item { background: #fff; width: 250px; height: 50px; margin-bottom: 3px; }
 .ui-menu-item a { display: block; width: 250px; height: 50px; }
 .ui-menu-item a img { float: left; margin-right: 10px; }
 #ui-active-menuitem { background: #eee; }
 
-#image_wrap img { -moz-border-radius: 6px; -webkit-border-radius: 6px; }
+#image_wrap img { border: 2px solid #FFFFFF; -moz-border-radius: 6px; -webkit-border-radius: 6px; }
 
 .clearfix { clear: both; }
 

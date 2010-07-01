@@ -16,6 +16,19 @@ jQuery(function ($) {
       }
     });
 
+    $('#message').focus(function(){
+      if ($(this).hasClass('initial')) {
+        $(this).val('');
+        $(this).removeClass('initial');
+      }
+    });
+    $('#message').blur(function(){
+      if ($(this).val() == "") {
+        $(this).val('add a note if you like!');
+        $(this).addClass('initial');
+      }
+    });
+
 		$("#gram_instance_form").submit(function(){
 			FB.api('/' + $('#recipient_uid').val() + '/feed', 'post', 
 				{ message: $('#message').val(),
