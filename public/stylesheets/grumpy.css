@@ -6,7 +6,7 @@
 #login span { font-weight: bold; }
 #login img.profile { float: left; }
 
-#send-form { position: absolute; color: #fff; width: 290px; right: 10px; padding: 10px; background: #3b5998; border: 1px solid #1d2a5b; -moz-border-radius: 8px; -webkit-border-radius: 8px; }
+#send-form { position: absolute; color: #fff; width: 259px; right: 20px; padding: 10px; background: #3b5998; border: 1px solid #1d2a5b; -moz-border-radius: 6px; -webkit-border-radius: 6px; }
 #friend-avatar { float: left; margin-right: 10px; margin-bottom: 10px; }
 input { outline: none; border: none; width: 230px; margin-top: 8px; height: 24px; font-size: 18px; }
 input.initial { color: #aaa; }

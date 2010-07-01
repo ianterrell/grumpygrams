@@ -197,7 +197,7 @@ h3.title-twitter { background:url(/images/h3-twitter.png) no-repeat top right; w
 #featured-tabber #info  {
 	float: none;
 	position: relative;
-	padding: 10px 0 0 0;
+	padding: 10px 20px;
 	background: #000 url(/images/tabber_tile.jpg) repeat-x left top;
 }
 
