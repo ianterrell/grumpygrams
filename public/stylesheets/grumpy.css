@@ -5,7 +5,7 @@
 
 h1 { font-family: Bigfish, serif; font-size: 64px; margin: 0px; }
 
-#login { background: #3b5998; padding: 10px; position: absolute; right: 0px; top: 50px; border: 1px solid #1d2a5b; text-align: center; color: #fff; -moz-border-radius: 8px; -webkit-border-radius: 8px; }
+#login { display: none; background: #3b5998; padding: 10px; position: absolute; right: 0px; top: 50px; border: 1px solid #1d2a5b; text-align: center; color: #fff; -moz-border-radius: 8px; -webkit-border-radius: 8px; }
 #login { font-size: 12px; }
 #login a { color: #aaa; }
 #login span { font-weight: bold; }
@@ -13,7 +13,7 @@ h1 { font-family: Bigfish, serif; font-size: 64px; margin: 0px; }
 
 #send-form { position: absolute; color: #fff; width: 259px; right: 20px; padding: 10px; background: #3b5998; border: 1px solid #1d2a5b; -moz-border-radius: 6px; -webkit-border-radius: 6px; }
 #friend-avatar { float: left; margin-right: 10px; margin-bottom: 10px; }
-input { outline: none; border: none; width: 230px; margin-top: 8px; height: 24px; font-size: 18px; }
+input { outline: none; border: none; width: 195px; margin-top: 8px; height: 24px; font-size: 18px; }
 input.initial { color: #aaa; }
 
 .ui-menu-item { background: #fff; width: 250px; height: 50px; margin-bottom: 3px; }

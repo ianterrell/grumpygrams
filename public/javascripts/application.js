@@ -1,5 +1,6 @@
 jQuery(function ($) {
   $(document).ready(function(){
+    $('#login').fadeIn();
     FB.init({appId: 'fd577fc6f9d8d122717f0fdd6112e234', status: true, cookie: true, xfbml: false});
     FB.getLoginStatus();
     
