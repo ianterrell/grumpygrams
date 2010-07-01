@@ -1,8 +1,14 @@
 jQuery(function ($) {
   $(document).ready(function(){
-    $('#login').fadeIn();
     FB.init({appId: 'fd577fc6f9d8d122717f0fdd6112e234', status: true, cookie: true, xfbml: false});
-    FB.getLoginStatus();
+    FB.getLoginStatus(function(response) {
+      if (response.session) {
+        // logged in and connected user, someone you know
+      } else {
+        $('#login').fadeIn();
+        // no user session available, someone you dont know
+      }
+    });
     
     $('#friend,#message').focus(function(){
       if ($(this).hasClass('initial')) {
@@ -91,12 +97,26 @@ var currentSession;
 var currentUser;
 var currentUsersFriends;
 
+function showOrSwapLogin(method) {
+  if ($('#login').is(':visible')) {
+    $('#login').fadeOut('slow', method);
+    console.log('visible');
+  }
+  else {
+    console.log('invisible');
+    method();
+  }
+}
+
 FB.Event.subscribe('auth.sessionChange', function(response) {
+  console.log('in response function subscribe');
   if (response.session) {
     currentSession = response.session;
-    FB.api('/me', function(response) { currentUser = response; });
-    $('#login').fadeOut('slow', function() {
-      $('#login').html('<img src="http://graph.facebook.com/' + currentSession.uid + '/picture" class="profile">Logged in as <span>' + currentUser.name + '</span>.<br/><a href="#" onclick="logout(); return false;">Logout of Facebook</a>').fadeIn('slow');
+    FB.api('/me', function(response) { 
+      currentUser = response; 
+      showOrSwapLogin(function() {
+        $('#login').html('<img src="http://graph.facebook.com/' + currentSession.uid + '/picture" class="profile">Logged in as <span>' + currentUser.name + '</span>.<br/><a href="#" onclick="logout(); return false;">Logout of Facebook</a>').fadeIn('slow');
+      });
     });
     FB.api('/me/friends', function(response) { 
       currentUsersFriends = response;
@@ -138,10 +158,11 @@ FB.Event.subscribe('auth.sessionChange', function(response) {
     });
     
   } else {
+    console.log('here!');
     currentSession = null;
     currentUser = null;
     currentUsersFriends = null;
-    $('#login').fadeOut('slow', function() {
+    showOrSwapLogin(function() {
       $('#login').html('<a href="#" onclick="login(); return false;"><img src="/images/fb-login-button.png"></a>').fadeIn('slow');
     });
   }
