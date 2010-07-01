@@ -1,6 +1,6 @@
 #send-form
   %h2= "Is someone being grumpy?"
-  %p= "Pick a gram on the left, choose the grumpy gus below, type a little message, and hit send!  It will all be posted to their Facebook wall to cheer them up!"
+  %p= "Pick a gram on the left, choose the grumpy gus from your friends below, type a little message, and hit send!  It will all be posted to their Facebook wall to cheer them up!"
   %form{:action => "#{root_path}", :method => "post", :id => "gram_instance_form"}
     = image_tag "no-one.png", :id => "friend-avatar", :width => 50, :height => 50
     %input#friend.initial{ :value => "enter a friend's name" }
