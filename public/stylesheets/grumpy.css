@@ -43,13 +43,12 @@ input[type=submit] { cursor: pointer; color: #FFFFFF; background: #660099; width
 	/* required settings */
 	position:relative;
 	overflow:hidden;
-	width: 550px;
-	height:120px;
+	width: 545px;
+	height:100px;
 	background-color: #1a1d1c;
-	margin-top: 20px; 
-	-moz-border-radius: 8px; -webkit-border-radius: 8px;
+	-moz-border-radius-bottomright: 8px; -webkit-border-bottom-right-radius: 8px;
+	-moz-border-radius-bottomleft: 8px; -webkit-border-bottom-left-radius: 8px;
 }
-
 /*
 	root element for scrollable items. Must be absolutely positioned
 	and it should have a extremely large width to accomodate scrollable items.
@@ -65,18 +64,18 @@ input[type=submit] { cursor: pointer; color: #FFFFFF; background: #660099; width
 
 .items div {
 	float:left;
-	margin-top: 10px;
+	margin-top: 0px;
 	width:680px;
 }
 
 /* single scrollable item */
 .scrollable img {
 	float:left;
-	margin:10px 5px 0px 21px;
+	margin:10px 0px 0px 10px;
 	background-color:#fff;
 	padding:2px;
 	border:1px solid #ccc;
-	width:100px;
+	width:117px;
 	height:75px;
 	
 	-moz-border-radius:4px;
@@ -103,7 +102,7 @@ a.browse {
 	width:30px;
 	height:30px;
 	float:left;
-	margin:60px 10px;
+	margin:35px 10px;
 	cursor:pointer;
 	font-size:1px;
 }
