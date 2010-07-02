@@ -3,11 +3,12 @@
   %p= "Pick a gram on the left, choose the grumpy gus from your friends below, type a little message, and hit send!  It will all be posted to their Facebook wall to cheer them up!"
   %form{:action => "#{root_path}", :method => "post", :id => "gram_instance_form"}
     = image_tag "no-one.png", :id => "friend-avatar", :width => 50, :height => 50
-    %input#friend.initial{ :value => "enter a friend's name" }
-    %input#recipient_uid{:type=>"hidden"}
-    %input#gram_id{:type=>"hidden"}
-    %textarea#message.initial= "add a note if you like!"
-    %input{:type=>"submit", :value=> "Send it!"}
+    #inputs
+      %input#friend.initial{ :value => "enter a friend's name" }
+      %input#recipient_uid{:type=>"hidden"}
+      %input#gram_id{:type=>"hidden"}
+      %textarea#message.initial= "add a note if you like!"
+      %input{:type=>"submit", :value=> "Send it!"}
     
 
 #image_wrap
