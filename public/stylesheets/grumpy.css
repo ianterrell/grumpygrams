@@ -44,7 +44,7 @@ input[type=submit] { cursor: pointer; color: #FFFFFF; background: #660099; width
 	position:relative;
 	overflow:hidden;
 	width: 550px;
-	height:100px;
+	height:120px;
 	background-color: #1a1d1c;
 	margin-top: 10px; 
 	-moz-border-radius: 8px; -webkit-border-radius: 8px;
@@ -65,13 +65,14 @@ input[type=submit] { cursor: pointer; color: #FFFFFF; background: #660099; width
 
 .items div {
 	float:left;
+	margin-top: 10px;
 	width:680px;
 }
 
 /* single scrollable item */
 .scrollable img {
 	float:left;
-	margin:10px 15px 0px 15px;
+	margin:10px 5px 0px 21px;
 	background-color:#fff;
 	padding:2px;
 	border:1px solid #ccc;
