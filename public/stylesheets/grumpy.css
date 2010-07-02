@@ -77,6 +77,7 @@ input[type=submit] { cursor: pointer; color: #FFFFFF; background: #660099; width
 	border:1px solid #ccc;
 	width:117px;
 	height:75px;
+	cursor: pointer;
 	
 	-moz-border-radius:4px;
 	-webkit-border-radius:4px;
@@ -84,7 +85,8 @@ input[type=submit] { cursor: pointer; color: #FFFFFF; background: #660099; width
 
 /* active item */
 .scrollable .active {
-	border:2px solid #000;
+	background-color: #660099;
+	border-color: #660099;
 	position:relative;
 	cursor:default;
 }
