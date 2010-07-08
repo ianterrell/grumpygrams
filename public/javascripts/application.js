@@ -35,7 +35,7 @@ jQuery(function ($) {
 			$('#submit_button').attr('disabled', 'disabled');
 			$('#submit_button').val('Sending...');
 			
-			
+			//TODO: fix this so it actually posts to the friend's feed!!!
 			FB.api('/me' /*+ $('#recipient_uid').val()*/ + '/feed', 'post', 
 				{ message: $('#message').val(),
 				  picture: $("#" + $('#gram_id').val()).attr("src"),
