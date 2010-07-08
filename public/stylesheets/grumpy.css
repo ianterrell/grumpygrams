@@ -34,6 +34,9 @@ input[type=submit] { cursor: pointer; color: #FFFFFF; background: #660099; width
 
 .clearfix { clear: both; }
 
+/* -------------------- Flash ----------------------*/
+#flash{ display: none; width: 100%; margin-bottom: 10px; font-weight: bold; position:fixed; z-index: 100; left:0; top:0; text-align: center; padding: 10px; font-size: 18px; background:#CCE477; color:#264409; }
+
 /*
 	root element for the scrollable.
 	when scrolling occurs this element stays still.

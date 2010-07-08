@@ -1,36 +1,42 @@
 jQuery(function ($) {
   $(document).ready(function(){
+		$('#friend,#message').focus(function(){
+	    if ($(this).hasClass('initial')) {
+	      $(this).val('');
+	      $(this).removeClass('initial');
+	    }
+	  });
+	  $('#friend').blur(function(){
+	    if ($(this).val() == "") {
+	      $(this).val('enter a friend\'s name');
+	      $(this).addClass('initial');
+	    }
+	  });
+	  $('#message').blur(function(){
+	    if ($(this).val() == "") {
+	      $(this).val('add a note if you like!');
+	      $(this).addClass('initial');
+	    }
+	  });
     FB.init({appId: 'fd577fc6f9d8d122717f0fdd6112e234', status: true, cookie: true, xfbml: false});
     FB.getLoginStatus(function(response) {
       if (response.session) {
         // logged in and connected user, someone you know
+				enableGramInstanceForm();
       } else {
         $('#login').fadeIn();
         // no user session available, someone you dont know
+				disableGramInstanceForm();
       }
     });
     
-    $('#friend,#message').focus(function(){
-      if ($(this).hasClass('initial')) {
-        $(this).val('');
-        $(this).removeClass('initial');
-      }
-    });
-    $('#friend').blur(function(){
-      if ($(this).val() == "") {
-        $(this).val('enter a friend\'s name');
-        $(this).addClass('initial');
-      }
-    });
-    $('#message').blur(function(){
-      if ($(this).val() == "") {
-        $(this).val('add a note if you like!');
-        $(this).addClass('initial');
-      }
-    });
 
 		$("#gram_instance_form").submit(function(){
-			FB.api('/' + $('#recipient_uid').val() + '/feed', 'post', 
+			$('#submit_button').attr('disabled', 'disabled');
+			$('#submit_button').val('Sending...');
+			
+			
+			FB.api('/me' /*+ $('#recipient_uid').val()*/ + '/feed', 'post', 
 				{ message: $('#message').val(),
 				  picture: $("#" + $('#gram_id').val()).attr("src"),
 					link: "http://www.grumpygrams.com/",
@@ -40,12 +46,20 @@ jQuery(function ($) {
 				}, 
 				function(response) {
 			  	if (!response || response.error) {
-				    alert('Error occured');
+				    $('#submit_button').removeAttr('disabled');
+						$('#submit_button').val('Try sending it again!');
 				  } else {
-				    return true;
+						$('#submit_button').val('Send it!');
+						$('#gram_instance_form')[0].reset();
+						$('#friend').addClass('initial');
+						$('#message').addClass('initial');
+						$("#flash").html("Success!");
+						$("#flash").slideDown("medium").delay(2000).slideUp("medium");
+						$('#submit_button').removeAttr('disabled');
 				  }
 				}
 			);
+			return false;
 		});
     
     $(".scrollable").scrollable();
@@ -172,6 +186,7 @@ function login() {
   FB.login(function(response) {
     if (response.session) {
       //alert('success log in');// user successfully logged in
+			enableGramInstanceForm();
     } else {
       //alert('cancelled login');// user cancelled login
     }
@@ -181,6 +196,18 @@ function login() {
 
 function logout() {
   FB.logout(function(response) {
-    
+    disableGramInstanceForm();
   });
+}
+
+function enableGramInstanceForm(){
+	$('#friend').val('enter a friend\'s name');
+  $('#message').val('add a note if you like!');
+	$('#friend,#message,#submit_button').removeAttr('disabled');
+}
+
+function disableGramInstanceForm(){
+  $('#friend').val('Please login with Facebook.');
+  $('#message').val('Please login with Facebook before sending a GrumpyGram.');
+	$('#friend,#message,#submit_button').attr('disabled', 'disabled');
 }
