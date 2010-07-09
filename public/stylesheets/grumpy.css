@@ -16,18 +16,18 @@ h1 { font-family: Bigfish, serif; font-size: 64px; margin: 0px; }
 #send-form { position: absolute; color: #fff; width: 269px; right: 20px; padding: 0px; top: 10px; }
 #send-form h2 { margin: 0px; padding: 0px; }
 #send-form p { margin: 10px 0px 20px 0px; padding: 0px; font-size: 14px; color: #eee; }
-#friend-avatar { float: left; margin-right: 10px; margin-bottom: 10px; }
+#friend-avatar { float: left; margin-right: 10px; margin-bottom: 10px; border: 2px solid #FFFFFF; }
 
 input, textarea { padding: 4px; outline: none; border: none; width: 190px; margin-bottom: 10px; height: 24px; -moz-border-radius: 3px; -webkit-border-radius: 3px;}
 input { font-size: 18px; }
 textarea { font-size: 14px; }
 textarea { height: 72px; }
 input.initial, textarea.initial { color: #aaa; font-size: 14px; }
-input[type=submit] { cursor: pointer; color: #FFFFFF; background: #660099; width: 196px; margin-left: 60px; height: 34px; border: 1px solid #550080; -moz-border-radius: 6px; -webkit-border-radius: 6px; }
+input[type=submit] { cursor: pointer; color: #FFFFFF; background: #660099; width: 200px; margin-left: 62px; height: 34px; border: 1px solid #550080; -moz-border-radius: 6px; -webkit-border-radius: 6px; }
 
-.ui-menu-item { background: #FFFFFF url(/images/friend-cell-bg.png) repeat top center; width: 190px; height: 50px; margin-bottom: 0px; border-bottom: 1px solid #999;}
-.ui-menu-item a { display: block; width: 190px; height: 50px; color: #fff; }
-.ui-menu-item a img { float: left; margin-right: 10px; }
+.ui-menu-item { background: #FFFFFF url(/images/friend-cell-bg.png) repeat top center; width: 200px; height: 56px; margin-bottom: 0px;}
+.ui-menu-item a { display: block; width: 200px; height: 56px; color: #fff; cursor: pointer; font-size: 14px; }
+.ui-menu-item a img { float: left; margin-right: 10px; border: 2px solid #FFFFFF; }
 #ui-active-menuitem { background: #FFFFFF url(/images/friend-cell-bg-highlight.png) repeat top center;}
 
 #image_wrap img { border: 2px solid #FFFFFF; -moz-border-radius: 6px; -webkit-border-radius: 6px; }

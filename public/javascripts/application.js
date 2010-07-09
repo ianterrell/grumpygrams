@@ -1,5 +1,13 @@
+var anchor;
 jQuery(function ($) {
   $(document).ready(function(){
+		var url = window.location.toString();
+		var anchor_index = url.indexOf('#');
+	  if (anchor_index != -1) {
+    	anchor = url.substring(anchor_index);
+    } else {
+			anchor = ":first";
+		}
 		$('#friend,#message').focus(function(){
 	    if ($(this).hasClass('initial')) {
 	      $(this).val('');
@@ -39,7 +47,7 @@ jQuery(function ($) {
 			FB.api('/me' /*+ $('#recipient_uid').val()*/ + '/feed', 'post', 
 				{ message: $('#message').val(),
 				  picture: $("#" + $('#gram_id').val()).attr("src"),
-					link: "http://www.grumpygrams.com/",
+					link: "http://www.grumpygrams.com/#" + $('#gram_id').val(),
 					caption: "This is a caption.",
 					description: "This is a description.",
 					name: "This is the name." 
@@ -103,7 +111,7 @@ jQuery(function ($) {
     	$(this).addClass("active");
 
     // when page loads simulate a "click" on the first image
-    }).filter(":first").click();
+    }).filter(anchor).click();
   });  
 });
 

@@ -20,7 +20,7 @@
     - @grams.in_groups_of(4).each do |grams|
       %div
         - grams.each do |gram|
-          = image_tag gram.image.url(:thumb), {:id => gram.id}
+          = image_tag gram.image.url(:thumb), {:id => gram.url_friendly_name }
 %a.next.browse.right
 .clearfix
 
