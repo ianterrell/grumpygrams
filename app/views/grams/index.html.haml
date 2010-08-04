@@ -1,3 +1,4 @@
+
 #send-form
   %h2= "Is someone being grumpy?"
   %p= "Pick a gram on the left, choose the grumpy gus from your friends below, type a little message, and hit send!  It will all be posted to their Facebook wall to cheer them up!"
@@ -9,6 +10,7 @@
       %input#gram_id{:type=>"hidden"}
       %textarea#message.initial= "add a note if you like!"
       %input{:type=>"submit", :value=> "Send it!"}
+
     
 
 #image_wrap
@@ -20,7 +22,7 @@
     - @grams.in_groups_of(4).each do |grams|
       %div
         - grams.each do |gram|
-          = image_tag gram.image.url(:thumb), {:id => gram.id}
+          = image_tag gram.image.url(:thumb), {:id => gram.url_friendly_name }
 %a.next.browse.right
 .clearfix
 
