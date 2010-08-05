@@ -32,7 +32,10 @@
           .top
           #info
             .tabber-post-content
-              = yield(:content) or yield
+              - if (content = yield(:content)).blank?
+                = yield
+              - else
+                = content
             / /.tabber-post-content
           / /#info
           .clear
