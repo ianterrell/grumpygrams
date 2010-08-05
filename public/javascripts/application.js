@@ -56,7 +56,7 @@ function sendGram() {
   	$('#submit_button').val('Sending...');
 	
   	var story = {
-  	  picture: $("#" + $('#gram_id').val()).attr("src"),
+  	  picture: $(".items img").filter(function(index){return $(this).attr('data-hash') == $('#gram_id').val()}).attr("src"),
   		link: "http://www.grumpygrams.com/#" + $('#gram_id').val(),
   		caption: "This is a caption.",
   		description: "This is a description.",
