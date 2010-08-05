@@ -1,0 +1,8 @@
+.actions
+  = link_to 'Cancel', [:admin, @gram], :class => "back"
+
+%h2 
+  Editing
+  = @gram.name
+  
+= render 'form'

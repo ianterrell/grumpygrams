@@ -3,6 +3,9 @@ Grumpygrams::Application.routes.draw do |map|
   root :to => "grams#index"
   resources :grams
 
+  namespace :admin do
+    resources :grams
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

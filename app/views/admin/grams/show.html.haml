@@ -1,0 +1,11 @@
+.actions
+  = link_to 'Edit', edit_admin_gram_path(@gram), :class => "edit"
+  = link_to 'Back', admin_grams_path, :class => "back"
+
+%h2
+  = @gram.name
+%h3
+  = @gram.phrase
+
+= image_tag(@gram.image.url)
+= image_tag(@gram.image.url(:thumb))

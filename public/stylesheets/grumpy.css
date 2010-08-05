@@ -145,3 +145,15 @@ a.down:active  	{ background-position:-60px -30px; }
 a.disabled {
 	visibility:hidden !important;		
 } 	
+
+
+#admin .gram { float: left; margin: 0px 10px 10px 0px; }
+#admin .actions { float: right; }
+#admin .actions a { padding-left: 20px; text-decoration: none; }
+#admin .actions a:hover { text-decoration: underline; }
+#admin .actions a.edit { background:transparent url(/images/icons/16x16/edit.png) 0px 50% no-repeat; }
+#admin .actions a.back { background:transparent url(/images/icons/16x16/back.png) 0px 50% no-repeat; }
+#admin .actions a.new { background:transparent url(/images/icons/16x16/add.png) 0px 50% no-repeat; }
+#admin #gram_image { color: white; width: 300px; }
+#admin form abbr { display: none; }
+#admin label { width: 50px; float: left; font-weight: bold; }

@@ -51,12 +51,8 @@ function sendGram() {
 		    $('#submit_button').removeAttr('disabled');
 				$('#submit_button').val('Error...  Try again!');
 		  } else {
-				$('#submit_button').val('Send it!');
-				$('#gram_instance_form')[0].reset();
-				$('#friend').addClass('initial');
-				$('#message').addClass('initial');
-				$("#flash").html("Success!");
-				$("#flash").slideDown("medium").delay(2000).slideUp("medium");
+        enableForm();
+				$("#flash").html("GrumpyGram delivered!").slideDown("medium").delay(3000).slideUp("medium");
 				$('#submit_button').removeAttr('disabled');
 		  }
 		}
@@ -88,10 +84,11 @@ function initializeForm() {
   $("#gram_instance_form").submit(sendGram);
 }
 
-function enableForm(){
+function enableForm() {
+  $('#gram_instance_form img').attr('src', '/images/no-one.png');
   resetFriendField();
   resetMessageField();
-	$('#submit_button').removeAttr('disabled');
+  $('#submit_button').val('Send it!').removeAttr('disabled');
 }
 
 function disableForm(){

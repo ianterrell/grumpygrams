@@ -32,7 +32,7 @@
           .top
           #info
             .tabber-post-content
-              = yield
+              = yield(:content) or yield
             / /.tabber-post-content
           / /#info
           .clear

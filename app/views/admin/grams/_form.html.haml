@@ -1,0 +1,8 @@
+= simple_form_for [:admin, @gram], :html => { :multipart => true } do |f|
+  = f.input :name
+  = f.input :phrase
+  = f.input :image
+  
+  = f.submit 'Save'
+
+.clearfix

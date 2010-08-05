@@ -1,0 +1,9 @@
+.actions
+  = link_to 'New gram', new_admin_gram_path, :class => "new"
+%h2 Grams
+
+- @grams.each do |gram|
+  .gram
+    = link_to image_tag(gram.image.url(:thumb)), [:admin, gram]
+
+.clearfix

@@ -5,9 +5,13 @@ gem 'rails', ">= 3.0.0.rc"
 gem 'paperclip', :git => 'http://github.com/thoughtbot/paperclip.git'
 gem 'aws-s3'
 
-gem 'formtastic', :git => 'http://github.com/justinfrench/formtastic.git', :branch => 'rails3'
+gem 'simple_form'
+
+gem 'inherited_resources', '1.1.2'
 
 gem "haml"
+
+gem "rails3-generators", :group => :development
 
 group :test do
   gem "rspec-rails", ">= 2.0.0.beta.12"
