@@ -43,15 +43,18 @@ function sendGram() {
 	$('#submit_button').attr('disabled', 'disabled');
 	$('#submit_button').val('Sending...');
 	
+	var story = {
+	  picture: $("#" + $('#gram_id').val()).attr("src"),
+		link: "http://www.grumpygrams.com/#" + $('#gram_id').val(),
+		caption: "This is a caption.",
+		description: "This is a description.",
+		name: "This is the name." 
+	};
+	if ($('#message').val() != 'add a note if you like!')
+	  story.message = $('#message').val();
+	
 	//TODO: fix this so it actually posts to the friend's feed!!!
-	FB.api('/me' /*+ $('#recipient_uid').val()*/ + '/feed', 'post', 
-		{ message: $('#message').val(),
-		  picture: $("#" + $('#gram_id').val()).attr("src"),
-			link: "http://www.grumpygrams.com/#" + $('#gram_id').val(),
-			caption: "This is a caption.",
-			description: "This is a description.",
-			name: "This is the name." 
-		}, 
+	FB.api('/me' /*+ $('#recipient_uid').val()*/ + '/feed', 'post', story, 
 		function(response) {
 	  	if (!response || response.error) {
 		    $('#submit_button').removeAttr('disabled');
