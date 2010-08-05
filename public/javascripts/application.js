@@ -64,6 +64,18 @@ function sendGram() {
 	return false;
 }
 
+function resetFriendField() {
+  $('#friend').val('enter a friend\'s name');
+  $('#friend').addClass('initial');
+	$('#friend').removeAttr('disabled');
+}
+
+function resetMessageField() {
+  $('#message').val('add a note if you like!');
+  $('#message').addClass('initial');
+	$('#message').removeAttr('disabled');
+}
+
 function initializeForm() {
   $('#friend,#message').focus(function(){
     if ($(this).hasClass('initial')) {
@@ -71,25 +83,15 @@ function initializeForm() {
       $(this).removeClass('initial');
     }
   });
-  $('#friend').blur(function(){
-    if ($(this).val() == "") {
-      $(this).val('enter a friend\'s name');
-      $(this).addClass('initial');
-    }
-  });
-  $('#message').blur(function(){
-    if ($(this).val() == "") {
-      $(this).val('add a note if you like!');
-      $(this).addClass('initial');
-    }
-  });
+  $('#friend').blur(function(){  if ($(this).val() == "") { resetFriendField();  }});
+  $('#message').blur(function(){ if ($(this).val() == "") { resetMessageField(); }});
   $("#gram_instance_form").submit(sendGram);
 }
 
 function enableForm(){
-	$('#friend').val('enter a friend\'s name');
-  $('#message').val('add a note if you like!');
-	$('#friend,#message,#submit_button').removeAttr('disabled');
+  resetFriendField();
+  resetMessageField();
+	$('#submit_button').removeAttr('disabled');
 }
 
 function disableForm(){
