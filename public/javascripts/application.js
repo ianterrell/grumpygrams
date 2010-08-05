@@ -16,13 +16,17 @@ function initializeScrollable() {
   $(".items img").click(function() {
   	if ($(this).hasClass("active")) { return; } // see if same thumb is being clicked
   	var url = $(this).attr("src").replace("thumb", "original"); // calclulate large image's URL based on the thumbnail URL 
-  	var wrap = $("#image_wrap").fadeTo("medium", 0.5); // get handle to element that wraps the image and make it semi-transparent
+  	var wrap = $("#image_wrap");//.fadeTo("medium", 0.5); // get handle to element that wraps the image and make it semi-transparent
   	var img = new Image(); // the large image
 		var gram = $(this).attr("id");	// grab the gram id
   	// call this function after it's loaded
   	img.onload = function() {
-  		wrap.fadeTo("fast", 1); // make wrapper fully visible
-  		wrap.find("img").attr("src", url); // change the image
+  		wrap.fadeTo("fast", 0.4, function(){
+  		  wrap.find("img").attr("src", url);
+  		  wrap.fadeTo("fast", 1);
+  		}); // make wrapper fully visible
+      //       wrap.find("img").attr("src", url); // change the image
+      // wrap.fadeTo("fast", 1); // make wrapper fully visible
 			$('#gram_id').val(gram); // set the form with gram id
   	};
   	img.src = url; // begin loading the image
