@@ -23,7 +23,7 @@
       %div
         - grams.each do |gram|
           - if gram
-            = image_tag gram.image.url(:thumb), {:id => gram.url_friendly_name, :"data-phrase" => gram.phrase }
+            = image_tag gram.image.url(:thumb), {:"data-hash" => gram.url_friendly_name, :"data-phrase" => gram.phrase }
 %a.next.browse.right
 .clearfix
 

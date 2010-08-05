@@ -1,5 +1,4 @@
 // Variables
-var anchor;
 var currentSession;
 var currentUser;
 var currentUsersFriends;
@@ -9,18 +8,14 @@ var initialMessageText = "add a note if you like!"
 function initializeScrollable() {
   var url = window.location.toString();
 	var anchor_index = url.indexOf('#');
-  if (anchor_index != -1) {
-  	anchor = url.substring(anchor_index);
-  } else {
-		anchor = ":first";
-	}
+  var anchor = (anchor_index != -1) ? url.substring(anchor_index+1) : false;
   $(".scrollable").scrollable();
   $(".items img").click(function() {
   	if ($(this).hasClass("active")) { return; } // see if same thumb is being clicked
   	var url = $(this).attr("src").replace("thumb", "original"); // calclulate large image's URL based on the thumbnail URL 
   	var wrap = $("#image_wrap");//.fadeTo("medium", 0.5); // get handle to element that wraps the image and make it semi-transparent
   	var img = new Image(); // the large image
-		var gram = $(this).attr("id");	// grab the gram id
+		var gram = $(this).attr("data-hash");	// grab the gram id
 		var phrase = $(this).attr("data-phrase");
   	// call this function after it's loaded
   	img.onload = function() {
@@ -38,7 +33,7 @@ function initializeScrollable() {
   	$(".items img").removeClass("active");
   	$(this).addClass("active");
   // when page loads simulate a "click" on the first image
-  }).filter(anchor).click();  
+  }).filter(anchor ? function(index){return $(this).attr('data-hash') == anchor} : ":first").click();  
 }
 
 function displayMessage(div, message) {
