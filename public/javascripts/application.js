@@ -56,7 +56,7 @@ function sendGram() {
 				$('#submit_button').val('Error...  Try again!');
 		  } else {
         enableForm();
-				$("#flash").html("GrumpyGram delivered!").slideDown("medium").delay(3000).slideUp("medium");
+				$("#flash").html("GrumpyGram delivered!  Now they'll be so happy!  Send another?").slideDown("medium").delay(3000).slideUp("medium");
 				$('#submit_button').removeAttr('disabled');
 		  }
 		}
