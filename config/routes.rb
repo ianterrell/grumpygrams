@@ -1,13 +1,8 @@
 Grumpygrams::Application.routes.draw do |map|  
 
   root :to => "grams#index"
+  resources :grams
 
-  resources :grams do
-    resources :gram_instances, :as => "instances"
-  end
-
-  match "facebook/connect", :to => 'user_sessions#facebook_connect', :as => 'facebook_connect'
-  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

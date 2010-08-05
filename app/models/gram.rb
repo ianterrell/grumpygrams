@@ -1,11 +1,8 @@
-
 class Gram < ActiveRecord::Base
   include Paperclip
   
-  has_many :gram_instances
-  
   has_attached_file :image, :styles => { :thumb => "100x100" }, :storage => :s3,
-      :s3_credentials => "#{RAILS_ROOT}/config/s3.yml", :path => ':class/:id/:style.:extension'
+      :s3_credentials => "#{Rails.application.root}/config/s3.yml", :path => ':class/:id/:style.:extension'
 
   validates_attachment_presence :image, :message => 'Please select an image'
   validates_attachment_size :image, :less_than => 100.kilobytes, :message => 'Image must be less than 100kb.'

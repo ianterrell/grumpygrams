@@ -1,2 +1,0 @@
-class GramInstancesController < ApplicationController
-end

@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', ">= 3.0.0.beta4"
+gem 'rails', ">= 3.0.0.rc"
 
 gem 'paperclip', :git => 'http://github.com/thoughtbot/paperclip.git'
 gem 'aws-s3'

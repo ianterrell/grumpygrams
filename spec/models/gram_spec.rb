@@ -1,16 +1,14 @@
 require 'spec_helper'
 
 describe Gram do
-  before(:all) do
-    @first = Factory.create(:gram)
-    @second = Factory.create(:gram)
-  end
-  
-  it "should be valid with a valid instance" do
-    Factory(:gram).should be_valid
-  end
-
-  it { should have_many(:gram_instances) }
+  # before(:all) do
+  #   @first = Factory.create(:gram)
+  #   @second = Factory.create(:gram)
+  # end
+  # 
+  # it "should be valid with a valid instance" do
+  #   Factory(:gram).should be_valid
+  # end
   
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:phrase) }
