@@ -4,7 +4,11 @@ Grumpygrams::Application.routes.draw do |map|
   resources :grams
 
   namespace :admin do
-    resources :grams
+    resources :grams do
+      collection do
+        post :reorder
+      end
+    end
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.

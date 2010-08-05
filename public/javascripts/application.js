@@ -193,11 +193,33 @@ function logout() {
   FB.logout();
 }
 
+function initializeSortableAdmin() {
+  $('#admin #grams').sortable({
+    dropOnEmpty: false,
+    cursor: 'crosshair',
+    items: '.gram',
+    opacity: 0.4,
+    scroll: true,
+    update: function(){
+      $.ajax({
+        type: 'post',
+        data: $('#admin #grams').sortable('serialize'),
+        dataType: 'script',
+        url: '/admin/grams/reorder'
+      })
+    }
+  });
+}
+
 jQuery(function ($) {
   $(document).ready(function(){
-    FB.init({appId: 'fd577fc6f9d8d122717f0fdd6112e234', status: true, cookie: true, xfbml: false});
-    FB.getLoginStatus();
-    initializeForm();
-    initializeScrollable();
+    if ($('#admin').size() == 1)
+      initializeSortableAdmin();
+    else {
+      FB.init({appId: 'fd577fc6f9d8d122717f0fdd6112e234', status: true, cookie: true, xfbml: false});
+      FB.getLoginStatus();
+      initializeForm();
+      initializeScrollable();
+    } 
   });
 });

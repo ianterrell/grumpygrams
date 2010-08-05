@@ -13,6 +13,8 @@ class Gram < ActiveRecord::Base
   validates_length_of :phrase, :within => 3..255
   validates_uniqueness_of :name, :on => :create, :case_sensitive => false, :message => "Must have a unique name"
   
+  default_scope :order => "position asc"
+  
   def url_friendly_name
     name.downcase.sub(" ", "_")
   end
