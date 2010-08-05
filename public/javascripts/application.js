@@ -19,6 +19,7 @@ function initializeScrollable() {
   	var wrap = $("#image_wrap");//.fadeTo("medium", 0.5); // get handle to element that wraps the image and make it semi-transparent
   	var img = new Image(); // the large image
 		var gram = $(this).attr("id");	// grab the gram id
+		var phrase = $(this).attr("data-phrase");
   	// call this function after it's loaded
   	img.onload = function() {
   		wrap.fadeTo("fast", 0.4, function(){
@@ -28,6 +29,7 @@ function initializeScrollable() {
       //       wrap.find("img").attr("src", url); // change the image
       // wrap.fadeTo("fast", 1); // make wrapper fully visible
 			$('#gram_id').val(gram); // set the form with gram id
+			$('#phrase').html(phrase);
   	};
   	img.src = url; // begin loading the image
   	// activate item

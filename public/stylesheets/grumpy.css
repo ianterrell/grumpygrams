@@ -157,3 +157,4 @@ a.disabled {
 #admin #gram_image { color: white; width: 300px; }
 #admin form abbr { display: none; }
 #admin label { width: 50px; float: left; font-weight: bold; }
+#admin #gram_phrase { width: 600px; }
