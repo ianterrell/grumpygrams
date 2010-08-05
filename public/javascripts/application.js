@@ -41,34 +41,51 @@ function initializeScrollable() {
   }).filter(anchor).click();  
 }
 
+function displayMessage(div, message) {
+  $("#" + div).html(message).slideDown("medium").delay(3000).slideUp("medium");
+}
+
+function flash(message) {
+  displayMessage("flash", message);
+}
+
+function oops(message) {
+  displayMessage("oops", message);
+}
+
 function sendGram() {
-	$('#submit_button').attr('disabled', 'disabled');
-	$('#submit_button').val('Sending...');
+	if ($('#recipient_uid').val() == '')
+	  oops("Oops!  You gotta pick a friend first!");
+	else {
+  	$('#submit_button').attr('disabled', 'disabled');
+  	$('#submit_button').val('Sending...');
 	
-	var story = {
-	  picture: $("#" + $('#gram_id').val()).attr("src"),
-		link: "http://www.grumpygrams.com/#" + $('#gram_id').val(),
-		caption: "This is a caption.",
-		description: "This is a description.",
-		name: "This is the name." 
-	};
-	if ($('#message').val() != initialMessageText)
-	  story.message = $('#message').val();
+  	var story = {
+  	  picture: $("#" + $('#gram_id').val()).attr("src"),
+  		link: "http://www.grumpygrams.com/#" + $('#gram_id').val(),
+  		caption: "This is a caption.",
+  		description: "This is a description.",
+  		name: "This is the name." 
+  	};
+  	if ($('#message').val() != initialMessageText)
+  	  story.message = $('#message').val();
 	
-	//TODO: fix this so it actually posts to the friend's feed!!!
-	FB.api('/me' /*+ $('#recipient_uid').val()*/ + '/feed', 'post', story, 
-		function(response) {
-	  	if (!response || response.error) {
-		    $('#submit_button').removeAttr('disabled');
-				$('#submit_button').val('Error...  Try again!');
-		  } else {
-		    _gaq.push(['_trackEvent', 'Grams', 'Send', $('#gram_id').val()]);
-        enableForm();
-				$("#flash").html("GrumpyGram delivered!  Now they'll be so happy!  Send another?").slideDown("medium").delay(3000).slideUp("medium");
-				$('#submit_button').removeAttr('disabled');
-		  }
-		}
-	);
+  	//TODO: fix this so it actually posts to the friend's feed!!!
+  	FB.api('/me' /*+ $('#recipient_uid').val()*/ + '/feed', 'post', story, 
+  		function(response) {
+  	  	if (!response || response.error) {
+      	  oops("Oh noes, there was an error sending your gram! Try not to fly off the handle.");
+  		    $('#submit_button').removeAttr('disabled');
+  				$('#submit_button').val('Try sending again!');
+  		  } else {
+  		    _gaq.push(['_trackEvent', 'Grams', 'Send', $('#gram_id').val()]);
+          enableForm();
+  				flash("GrumpyGram delivered!  Now they'll be so happy!  Send another?");
+  				$('#submit_button').removeAttr('disabled');
+  		  }
+  		}
+  	);
+	}
 	return false;
 }
 
@@ -98,6 +115,7 @@ function initializeForm() {
 
 function enableForm() {
   $('#gram_instance_form img').attr('src', '/images/no-one.png');
+  $('#recipient_uid').val('');
   resetFriendField();
   resetMessageField();
   $('#submit_button').val('Send it!').removeAttr('disabled');
