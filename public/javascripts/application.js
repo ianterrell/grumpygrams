@@ -3,6 +3,8 @@ var anchor;
 var currentSession;
 var currentUser;
 var currentUsersFriends;
+var initialNameText = "enter a friend's name";
+var initialMessageText = "add a note if you like!"
 
 function initializeScrollable() {
   var url = window.location.toString();
@@ -50,7 +52,7 @@ function sendGram() {
 		description: "This is a description.",
 		name: "This is the name." 
 	};
-	if ($('#message').val() != 'add a note if you like!')
+	if ($('#message').val() != initialMessageText)
 	  story.message = $('#message').val();
 	
 	//TODO: fix this so it actually posts to the friend's feed!!!
@@ -71,13 +73,13 @@ function sendGram() {
 }
 
 function resetFriendField() {
-  $('#friend').val('enter a friend\'s name');
+  $('#friend').val(initialNameText);
   $('#friend').addClass('initial');
 	$('#friend').removeAttr('disabled');
 }
 
 function resetMessageField() {
-  $('#message').val('add a note if you like!');
+  $('#message').val(initialMessageText);
   $('#message').addClass('initial');
 	$('#message').removeAttr('disabled');
 }
