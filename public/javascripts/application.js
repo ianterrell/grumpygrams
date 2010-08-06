@@ -129,6 +129,12 @@ function showOrSwapLogin(method) {
     method();
 }
 
+function showLogin() {
+  showOrSwapLogin(function() {
+    $('#login').html('<a href="#" onclick="login(); return false;"><img src="/images/fb-login-button.png"></a>').fadeIn('slow');
+  });
+}
+
 function getCurrentUser() {
   FB.api('/me', function(response) { 
     currentUser = response; 
@@ -191,9 +197,7 @@ FB.Event.subscribe('auth.sessionChange', function(response) {
     currentSession = null;
     currentUser = null;
     currentUsersFriends = null;
-    showOrSwapLogin(function() {
-      $('#login').html('<a href="#" onclick="login(); return false;"><img src="/images/fb-login-button.png"></a>').fadeIn('slow');
-    });
+    showLogin();
   }
 });
 
@@ -236,7 +240,7 @@ jQuery(function ($) {
       initializeSortableAdmin();
     else {
       FB.init({appId: 'fd577fc6f9d8d122717f0fdd6112e234', status: true, cookie: true, xfbml: false});
-      FB.getLoginStatus();
+      FB.getLoginStatus(function(response){if (!response.session) showLogin();});
       initializeForm();
       initializeScrollable();
     } 
