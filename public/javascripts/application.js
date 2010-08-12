@@ -17,6 +17,7 @@ function initializeScrollable() {
   	var img = new Image(); // the large image
 		var gram = $(this).attr("data-hash");	// grab the gram id
 		var phrase = $(this).attr("data-phrase");
+		var name = $(this).attr("data-name");
   	// call this function after it's loaded
   	img.onload = function() {
   		wrap.fadeTo("fast", 0.4, function(){
@@ -26,6 +27,7 @@ function initializeScrollable() {
       //       wrap.find("img").attr("src", url); // change the image
       // wrap.fadeTo("fast", 1); // make wrapper fully visible
 			$('#gram_id').val(gram); // set the form with gram id
+			$('#name').html(name);
 			$('#phrase').html(phrase);
   	};
   	img.src = url; // begin loading the image
@@ -125,7 +127,7 @@ function disableForm(){
 function showOrSwapLogin(method) {
   if ($('#login').is(':visible'))
     $('#login').fadeOut('slow', method);
-  else 
+	else 
     method();
 }
 
@@ -139,7 +141,7 @@ function getCurrentUser() {
   FB.api('/me', function(response) { 
     currentUser = response; 
     showOrSwapLogin(function() {
-      $('#login').html('<img src="http://graph.facebook.com/' + currentSession.uid + '/picture" class="profile">logged in as <span>' + currentUser.name + '</span><br/><a href="#" onclick="logout(); return false;" class="logout">Logout of <img src="/images/fb-favicon.png"></a>').fadeIn('slow');
+      $('#login').html('<img src="http://graph.facebook.com/' + currentSession.uid + '/picture" class="profile"><span>' + currentUser.name + '</span><br/><a href="#" onclick="logout(); return false;" class="logout">Logout of <img src="/images/fb-favicon.png"></a>').fadeIn('slow');
     });
   });
 }
@@ -240,8 +242,8 @@ jQuery(function ($) {
       initializeSortableAdmin();
     else {
       FB.init({appId: 'fd577fc6f9d8d122717f0fdd6112e234', status: true, cookie: true, xfbml: false});
-      FB.getLoginStatus(function(response){if (!response.session) showLogin();});
-      initializeForm();
+			initializeForm();
+      FB.getLoginStatus(function(response){if (!response.session) showLogin();disableForm();});
       initializeScrollable();
     } 
   });
