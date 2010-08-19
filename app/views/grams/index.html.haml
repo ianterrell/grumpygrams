@@ -19,17 +19,17 @@
 
 #image_wrap
   %img{:src => "http://static.flowplayer.org/tools/img/blank.gif", :width => 620, :height => 360 }
+#gram-image-flow
+  %a.prev.browse.left
+  .scrollable
+    .items
+      - @grams.in_groups_of(4).each do |grams|
+        %div
+          - grams.each do |gram|
+            - if gram
+              = image_tag gram.image.url(:thumb), {:"data-hash" => gram.url_friendly_name, :"data-phrase" => gram.phrase }
 
-%a.prev.browse.left
-.scrollable
-  .items
-    - @grams.in_groups_of(4).each do |grams|
-      %div
-        - grams.each do |gram|
-          - if gram
-            = image_tag gram.image.url(:thumb), {:"data-hash" => gram.url_friendly_name, :"data-phrase" => gram.phrase }
-
-%a.next.browse.right
-.clearfix
+  %a.next.browse.right
+  .clearfix
 
   

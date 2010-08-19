@@ -247,13 +247,16 @@ jQuery(function ($) {
 				$('#receive-it').attr('style', 'display:block;');
 				$('#send_your_own_button').click(function() {
 					$('#receive-it').fadeOut('slow', function() {
-						$('#send-it').fadeIn('slow', function () {
-							$(".items img").filter(':first').click();
+						$('#send-it').fadeIn('slow', function() {
+							$('#gram-image-flow').slideDown('slow', function() {
+								$(".items img").filter(':first').click();
+							});
 						});
 					});
 				});
 			} else {
 				$('#send-it').attr('style', 'display:block;');
+				$('#gram-image-flow').slideDown('slow');
 			}
     } 
   });
