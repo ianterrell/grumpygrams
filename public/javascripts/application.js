@@ -139,7 +139,7 @@ function getCurrentUser() {
   FB.api('/me', function(response) { 
     currentUser = response; 
     showOrSwapLogin(function() {
-      $('#login').html('<img src="http://graph.facebook.com/' + currentSession.uid + '/picture" class="profile"><span>' + currentUser.name + '</span><br/><a href="#" onclick="logout(); return false;" class="logout">Logout of <img src="/images/fb-favicon.png"></a>').fadeIn('slow');
+      $('#login').html('<img src="http://graph.facebook.com/' + currentSession.uid + '/picture" class="profile">Logged in as <span>' + currentUser.name + '</span><br/><a href="#" onclick="logout(); return false;" class="logout">Logout of <img src="/images/fb-favicon.png"></a>').fadeIn('slow');
     });
   });
 }
