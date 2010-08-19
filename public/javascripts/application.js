@@ -243,6 +243,18 @@ jQuery(function ($) {
 			initializeForm();
       FB.getLoginStatus(function(response){if (!response.session) showLogin();disableForm();});
       initializeScrollable();
+			if (window.location.toString().indexOf('#') != -1 ){
+				$('#receive-it').attr('style', 'display:block;');
+				$('#send_your_own_button').click(function() {
+					$('#receive-it').fadeOut('slow', function() {
+						$('#send-it').fadeIn('slow', function () {
+							$(".items img").filter(':first').click();
+						});
+					});
+				});
+			} else {
+				$('#send-it').attr('style', 'display:block;');
+			}
     } 
   });
 });

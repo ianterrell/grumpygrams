@@ -1,15 +1,19 @@
 
 #send-form
   %h2#phrase="Is someone grumpy?"
-  %p= "Pick a gram, choose a friend, type a little message, and hit send to post to their Facebook wall!"
-  %form{:action => "#{root_path}", :method => "post", :id => "gram_instance_form"}
-    = image_tag "no-one.png", :id => "friend-avatar", :width => 50, :height => 50
-    #inputs
-      %input#friend.initial{ :value => "enter a friend's name" }
-      %input#recipient_uid{:type=>"hidden"}
-      %input#gram_id{:type=>"hidden"}
-      %textarea#message.initial= "add a note if you like!"
-      %input{:id => "submit_button", :type=>"submit", :value=> "Send it!"}
+  #receive-it
+    %p= "Apparently one of your friends thinks you are grumpy! Time to send one of your own and spread the grump!"
+    %input{:id => "send_your_own_button", :type=>"button", :value=> "Send your own!"}
+  #send-it
+    %p= "Pick a gram, choose a friend, type a little message, and hit send to post to their Facebook wall!"
+    %form{:action => "#{root_path}", :method => "post", :id => "gram_instance_form"}
+      = image_tag "no-one.png", :id => "friend-avatar", :width => 50, :height => 50
+      #inputs
+        %input#friend.initial{ :value => "enter a friend's name" }
+        %input#recipient_uid{:type=>"hidden"}
+        %input#gram_id{:type=>"hidden"}
+        %textarea#message.initial= "add a note if you like!"
+        %input{:id => "submit_button", :type=>"submit", :value=> "Send it!"}
 
     
 
