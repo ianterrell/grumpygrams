@@ -1,7 +1,6 @@
 
 #send-form
-  %h2#name="Grumpy"
-  %h3#phrase= "Is someone grumpy?"
+  %h2#phrase="Is someone grumpy?"
   %p= "Pick a gram, choose a friend, type a little message, and hit send to post to their Facebook wall!"
   %form{:action => "#{root_path}", :method => "post", :id => "gram_instance_form"}
     = image_tag "no-one.png", :id => "friend-avatar", :width => 50, :height => 50
@@ -24,7 +23,7 @@
       %div
         - grams.each do |gram|
           - if gram
-            = image_tag gram.image.url(:thumb), {:"data-hash" => gram.url_friendly_name, :"data-phrase" => gram.phrase, :"data-name" => gram.name }
+            = image_tag gram.image.url(:thumb), {:"data-hash" => gram.url_friendly_name, :"data-phrase" => gram.phrase }
 
 %a.next.browse.right
 .clearfix
