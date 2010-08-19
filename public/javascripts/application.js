@@ -247,9 +247,8 @@ jQuery(function ($) {
 				$('#receive-it').attr('style', 'display:block;');
 				$('#send_your_own_button').click(function() {
 					$('#receive-it').fadeOut('slow', function() {
-						$('#send-it').fadeIn('slow', function() {
-							$('#gram-image-flow').slideDown('slow');
-						});
+						$('#send-it').fadeIn('slow');
+						$('#gram-image-flow').slideDown('slow');
 					});
 				});
 			} else {

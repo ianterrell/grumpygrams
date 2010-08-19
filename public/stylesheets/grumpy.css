@@ -34,7 +34,7 @@ input[type=submit], input[type=button] { cursor: pointer; color: #FFFFFF; backgr
 
 #image_wrap img { border: 2px solid #FFFFFF; -moz-border-radius: 6px; -webkit-border-radius: 6px; }
 
-#gram-image-flow {display: none;}
+#gram-image-flow { display: none; height: 100px; }
 
 .clearfix { clear: both; }
 
