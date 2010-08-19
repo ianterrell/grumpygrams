@@ -241,7 +241,7 @@ jQuery(function ($) {
     else {
       FB.init({appId: 'fd577fc6f9d8d122717f0fdd6112e234', status: true, cookie: true, xfbml: false});
 			initializeForm();
-      FB.getLoginStatus(function(response){if (!response.session) showLogin();disableForm();});
+      FB.getLoginStatus(function(response){if (!response.session) { showLogin(); disableForm(); }});
       initializeScrollable();
 			if (window.location.toString().indexOf('#') != -1 ){
 				$('#receive-it').attr('style', 'display:block;');
