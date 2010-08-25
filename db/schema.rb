@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100825152834) do
+ActiveRecord::Schema.define(:version => 20100825222624) do
 
   create_table "gram_instances", :force => true do |t|
     t.string   "message"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(:version => 20100825152834) do
     t.datetime "image_updated_at"
     t.integer  "position",           :default => 0
     t.string   "recipient_phrase"
+    t.string   "facebook_tagline"
+    t.string   "facebook_caption"
   end
 
   create_table "users", :force => true do |t|

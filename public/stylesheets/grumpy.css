@@ -165,5 +165,4 @@ a.disabled {
 #admin #gram_image { color: white; width: 300px; }
 #admin form abbr { display: none; }
 #admin label { width: 70px; float: left; font-weight: bold; }
-#admin #gram_phrase { width: 600px; }
-#admin #gram_recipient_phrase { width: 600px; }
+#admin #gram_phrase, #gram_recipient_phrase, #gram_facebook_tagline, #gram_facebook_caption { width: 600px; }

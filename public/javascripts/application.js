@@ -19,6 +19,8 @@ function initializeScrollable() {
 		var name = $(this).attr("data-name");
 		var phrase = $(this).attr("data-phrase");
 		var recipient_phrase = $(this).attr("recipient-phrase");
+		var facebook_tagline = $(this).attr("facebook-tagline");
+		var facebook_caption = $(this).attr("facebook-caption");
   	// call this function after it's loaded
   	img.onload = function() {
   		wrap.fadeTo("fast", 0.4, function(){
@@ -28,10 +30,10 @@ function initializeScrollable() {
       //       wrap.find("img").attr("src", url); // change the image
       // wrap.fadeTo("fast", 1); // make wrapper fully visible
 			$('#gram_id').val(gram); // set the form with gram id
-			$('#name').val(name);
 			$('#phrase').html(phrase);
 			$('#recipient_phrase').html(recipient_phrase);
-			$('#fb_caption').val(recipient_phrase);
+			$('#facebook_tagline').val(facebook_tagline);
+			$('#facebook_caption').val(facebook_caption);
   	};
   	img.src = url; // begin loading the image
   	// activate item
@@ -63,8 +65,8 @@ function sendGram() {
   	var story = {
   	  picture: $(".items img").filter(function(index){return $(this).attr('data-hash') == $('#gram_id').val()}).attr("src"),
   		link: "http://www.grumpygrams.com/#" + $('#gram_id').val(),
-			name: $('#name').val(),
-  		caption: $('#fb_caption').val()
+			name: $('#facebook_tagline').val(),
+  		caption: $('#facebook_caption').val()
   	};
   	if ($('#message').val() != initialMessageText)
   	  story.message = $('#message').val();
