@@ -13,8 +13,8 @@
         %input#friend.initial{ :value => "enter a friend's name" }
         %input#recipient_uid{:type=>"hidden"}
         %input#gram_id{:type=>"hidden"}
-        %input#name{:type=>"hidden"}
-        %input#fb_caption{:type=>"hidden"}
+        %input#facebook_tagline{:type=>"hidden"}
+        %input#facebook_caption{:type=>"hidden"}
         %textarea#message.initial= "add a note if you like!"
         %input{:id => "submit_button", :type=>"submit", :value=> "Send it!"}
 
@@ -30,7 +30,7 @@
         %div
           - grams.each do |gram|
             - if gram
-              = image_tag gram.image.url(:thumb), {:"data-hash" => gram.url_friendly_name, :"data-phrase" => gram.phrase, :"recipient-phrase" => gram.recipient_phrase, :"data-name" => gram.name }
+              = image_tag gram.image.url(:thumb), {:"data-hash" => gram.url_friendly_name, :"data-phrase" => gram.phrase, :"recipient-phrase" => gram.recipient_phrase, :"facebook-tagline" => gram.facebook_tagline, :"facebook-caption" => gram.facebook_caption }
 
   %a.next.browse.right
   .clearfix
