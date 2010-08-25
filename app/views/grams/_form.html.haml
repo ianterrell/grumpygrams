@@ -1,5 +1,5 @@
 - semantic_form_for @gram, :html => { :multipart => true } do |form|
-  = form.inputs :name, :phrase, :image
+  = form.inputs :name, :phrase, :recipient_phrase, :image
   = image_tag @gram.image.url
   = form.buttons 
 = debug @gram

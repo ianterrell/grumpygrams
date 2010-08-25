@@ -8,9 +8,10 @@ class Gram < ActiveRecord::Base
   validates_attachment_size :image, :less_than => 100.kilobytes, :message => 'Image must be less than 100kb.'
   validates_attachment_content_type :image, :content_type => ['image/jpeg', 'image/png'], :message => 'Image must be a jpeg or png file.'
   
-  validates_presence_of :name, :phrase
+  validates_presence_of :name, :phrase, :recipient_phrase
   validates_length_of :name, :within => 3..64
   validates_length_of :phrase, :within => 3..255
+  validates_length_of :recipient_phrase, :within => 3..255
   validates_uniqueness_of :name, :on => :create, :case_sensitive => false, :message => "Must have a unique name"
   
   default_scope :order => "position asc"

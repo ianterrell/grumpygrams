@@ -160,5 +160,6 @@ a.disabled {
 #admin .actions a.new { background:transparent url(/images/icons/16x16/add.png) 0px 50% no-repeat; }
 #admin #gram_image { color: white; width: 300px; }
 #admin form abbr { display: none; }
-#admin label { width: 50px; float: left; font-weight: bold; }
+#admin label { width: 70px; float: left; font-weight: bold; }
 #admin #gram_phrase { width: 600px; }
+#admin #gram_recipient_phrase { width: 600px; }

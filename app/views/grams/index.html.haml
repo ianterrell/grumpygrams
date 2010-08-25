@@ -1,10 +1,11 @@
 
 #send-form
-  %h2#phrase="Is someone grumpy?"
   #receive-it
+    %h2#recipient_phrase="Is someone grumpy?"
     %p= "Apparently one of your friends thinks you are grumpy! Time to send one of your own and spread the grump!"
     %input{:id => "send_your_own_button", :type=>"button", :value=> "Send your own!"}
   #send-it
+    %h2#phrase="Is someone grumpy?"
     %p= "Pick a gram, choose a friend, type a little message, and hit send to post to their Facebook wall!"
     %form{:action => "#{root_path}", :method => "post", :id => "gram_instance_form"}
       = image_tag "no-one.png", :id => "friend-avatar", :width => 50, :height => 50
@@ -27,7 +28,7 @@
         %div
           - grams.each do |gram|
             - if gram
-              = image_tag gram.image.url(:thumb), {:"data-hash" => gram.url_friendly_name, :"data-phrase" => gram.phrase }
+              = image_tag gram.image.url(:thumb), {:"data-hash" => gram.url_friendly_name, :"data-phrase" => gram.phrase, :"recipient-phrase" => gram.recipient_phrase }
 
   %a.next.browse.right
   .clearfix

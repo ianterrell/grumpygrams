@@ -17,6 +17,7 @@ function initializeScrollable() {
   	var img = new Image(); // the large image
 		var gram = $(this).attr("data-hash");	// grab the gram id
 		var phrase = $(this).attr("data-phrase");
+		var recipient_phrase = $(this).attr("recipient-phrase");
   	// call this function after it's loaded
   	img.onload = function() {
   		wrap.fadeTo("fast", 0.4, function(){
@@ -27,6 +28,7 @@ function initializeScrollable() {
       // wrap.fadeTo("fast", 1); // make wrapper fully visible
 			$('#gram_id').val(gram); // set the form with gram id
 			$('#phrase').html(phrase);
+			$('#recipient_phrase').html(recipient_phrase);
   	};
   	img.src = url; // begin loading the image
   	// activate item
