@@ -163,3 +163,43 @@ a.disabled {
 #admin label { width: 70px; float: left; font-weight: bold; }
 #admin #gram_phrase { width: 600px; }
 #admin #gram_recipient_phrase { width: 600px; }
+
+/* Bubble with an isoceles triangle
+------------------------------------------ */
+
+.triangle-isosceles {
+	position:relative;
+	padding:15px;
+	margin:1em 0 3em;
+	color:#000;
+	background:#fff; /* default background for browsers without gradient support */
+	
+	/* css3 */
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	/* NOTE: webkit gradient implementation is not as per spec */
+	background:-webkit-gradient(linear, left top, left bottom, from(#fff), to(#F0F0F0));
+	background:-moz-linear-gradient(top, #fff, #F0F0F0);
+	background:-o-linear-gradient(top, #fff, #F0F0F0);
+	background:linear-gradient(top, #fff, #F0F0F0);
+}
+
+.speech-bubbles {
+	color: #505050; font-size: 12px; font-weight: bold;
+}
+
+/* creates triangle */
+.triangle-isosceles:after {
+	content:"\00a0";
+	display:block; /* reduce the damage in FF3.0 */
+	position:absolute;
+	z-index:999;
+	bottom:-30px; /* value = - border-top-width - border-bottom-width */
+	left:20px; /* controls horizontal position */
+	width:0;
+	height:0;
+	border-width:15px 15px; /* vary these values to change the angle of the vertex */
+	border-style:solid;
+	border-color:#F0F0F0 transparent transparent;
+}

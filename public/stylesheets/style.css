@@ -222,8 +222,8 @@ body {
 	font-size: 11px;
 	color: #fff;
 }
-#bottom a{ color:#fff; }
-#bottom a:hover{ text-decoration:underline; }
+
+#bottom a:hover{ text-decoration:none; }
 
 /* Bottom Tabs */
 

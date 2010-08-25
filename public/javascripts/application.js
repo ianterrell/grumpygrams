@@ -16,6 +16,7 @@ function initializeScrollable() {
   	var wrap = $("#image_wrap");//.fadeTo("medium", 0.5); // get handle to element that wraps the image and make it semi-transparent
   	var img = new Image(); // the large image
 		var gram = $(this).attr("data-hash");	// grab the gram id
+		var name = $(this).attr("data-name");
 		var phrase = $(this).attr("data-phrase");
 		var recipient_phrase = $(this).attr("recipient-phrase");
   	// call this function after it's loaded
@@ -27,8 +28,10 @@ function initializeScrollable() {
       //       wrap.find("img").attr("src", url); // change the image
       // wrap.fadeTo("fast", 1); // make wrapper fully visible
 			$('#gram_id').val(gram); // set the form with gram id
+			$('#name').val(name);
 			$('#phrase').html(phrase);
 			$('#recipient_phrase').html(recipient_phrase);
+			$('#fb_caption').val(recipient_phrase);
   	};
   	img.src = url; // begin loading the image
   	// activate item
@@ -60,9 +63,8 @@ function sendGram() {
   	var story = {
   	  picture: $(".items img").filter(function(index){return $(this).attr('data-hash') == $('#gram_id').val()}).attr("src"),
   		link: "http://www.grumpygrams.com/#" + $('#gram_id').val(),
-  		caption: "This is a caption.",
-  		description: "This is a description.",
-  		name: "This is the name." 
+			name: $('#name').val(),
+  		caption: $('#fb_caption').val()
   	};
   	if ($('#message').val() != initialMessageText)
   	  story.message = $('#message').val();
