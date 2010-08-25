@@ -32,7 +32,6 @@
         #header
           %h1 GrumpyGrams
         .clear
-      / Content Starts
       #content.home.wrap
         #featured-tabber
           .clear
@@ -43,35 +42,18 @@
                 = yield
               - else
                 = content
-            / /.tabber-post-content
-          / /#info
           .clear
           .bottom
-        / /#featured-tabber
         .clear
-      / Content Ends
-      / bottom Starts
       #bottom-tile
       #bottom-out
         #bottom.wrap
           #features-top
-          / End features-top
           #features
-            %p.triangle-isosceles 
-              %a.speech-bubbles{:href => "http://www.grumpiverse.com"} Still feeling grumpy?  Come visit us over at The Grumpiverse and see what else awaits your royal Grumpiness.
-              
-            %img{:src => "/images/grumpalupagus.png"}
-              
-          / End features
-          .wrap
-            / Footer Widget Area Starts
-            .block.left
-            .block.middle
-            .block.right
-            / Footer Widget Area Ends
-        / bottom-out Ends
-      / bottom Ends
-      / footer Starts
+            = link_to image_tag("grumpiverse.png"), "http://www.grumpiverse.com"
+            = link_to image_tag("grumpiverse.png"), "http://www.grumpiverse.com"
+            #mailing-list
+              %h3 Sign up for our mailing list!
       #footer-out
         #footer.wrap
           .col-left
