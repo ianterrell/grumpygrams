@@ -102,8 +102,13 @@ function resetMessageField() {
 	$('#message').removeAttr('disabled');
 }
 
-function initializeForm() {
-  $('#friend,#message').focus(function(){
+function resetMailingListField() {
+  $('#mce-EMAIL').val('Email Address');
+  $('#mce-EMAIL').addClass('initial');
+}
+
+function initializeForms() {
+  $('#friend,#message,#mce-EMAIL').focus(function(){
     if ($(this).hasClass('initial')) {
       $(this).val('');
       $(this).removeClass('initial');
@@ -111,6 +116,7 @@ function initializeForm() {
   });
   $('#friend').blur(function(){  if ($(this).val() == "") { resetFriendField();  }});
   $('#message').blur(function(){ if ($(this).val() == "") { resetMessageField(); }});
+  $('#mce-EMAIL').blur(function(){ if ($(this).val() == "") { resetMailingListField(); }});
   $("#gram_instance_form").submit(sendGram);
 }
 
@@ -246,7 +252,7 @@ jQuery(function ($) {
       initializeSortableAdmin();
     else {
       FB.init({appId: 'fd577fc6f9d8d122717f0fdd6112e234', status: true, cookie: true, xfbml: false});
-			initializeForm();
+			initializeForms();
       FB.getLoginStatus(function(response){if (!response.session) { showLogin(); disableForm(); }});
       initializeScrollable();
 			if (window.location.toString().indexOf('#') != -1 ){
