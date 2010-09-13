@@ -50,11 +50,15 @@
         #bottom.wrap
           #features-top
           #features
-            = link_to image_tag("grumpiverse.png"), "http://www.grumpiverse.com"
             = link_to image_tag("montage-ad.png"), "http://www.grumpiverse.com"
+            #social
+              = link_to image_tag("fb-sidebar.png", :class => "fb"), "http://www.facebook.com/pages/Grumpiverse/147009798662853"
+              = link_to image_tag("tw-sidebar.png"), "http://twitter.com/grumpiverse"
+              %p
+                = link_to "or follow the whole cast!", "http://twitter.com/grumpiverse/lists/cast", :id => "tw-cast-sidebar"
             #mc_embed_signup
               %form#mc-embedded-subscribe-form.validate{:action => "http://grumpiverse.us1.list-manage.com/subscribe/post?u=89d29705020ff837b69494bf7&id=4025a3a8d4", :method => "post", :name => "mc-embedded-subscribe-form", :target => "_blank"}
-                %h3 More Grump!
+                %h3 Get More Grump!
                 %fieldset
                   %p Turn Hump Day into Grump Day:  Sign up for our weekly mailing list for comics and special deals!
                   .mc-field-group
