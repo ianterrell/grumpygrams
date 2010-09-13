@@ -17,6 +17,6 @@ class Gram < ActiveRecord::Base
   default_scope :order => "position asc"
   
   def url_friendly_name
-    name.downcase.sub(" ", "_")
+    name.downcase.gsub(" ", "_")
   end
 end
