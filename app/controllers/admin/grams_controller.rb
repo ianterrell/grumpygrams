@@ -3,6 +3,7 @@ class Admin::GramsController < ApplicationController
   layout 'admin'
   inherit_resources
   defaults :resource_class => Gram
+  cache_sweeper :gram_sweeper
   
   def reorder
     params[:gram].each_with_index do |id, index|  
