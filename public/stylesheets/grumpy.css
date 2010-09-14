@@ -4,7 +4,7 @@
 	src: url("/fonts/Bigfish.eot");
 	src: local("☺"),
 	  url("/fonts/Bigfish.ttf") format("truetype"),
-	  url("/fonts/Bigfish.svg") format("svg");
+	  url("/fonts/Bigfish.svg#Bigfish") format("svg");
 }
 
 #top-ad { background: #000; text-align: center; padding-bottom: 10px; }
