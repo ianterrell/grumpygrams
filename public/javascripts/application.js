@@ -8,7 +8,7 @@ var initialMessageText = "add a note if you like!"
 function initializeScrollable() {
   var url = window.location.toString();
 	var anchor_index = url.indexOf('#');
-  var anchor = (anchor_index != -1) ? url.substring(anchor_index+1).replace("send_", "") : false;
+  var anchor = (anchor_index != -1) ? url.substring(anchor_index+1).replace("send-", "") : false;
   $(".scrollable").scrollable();
   $(".items img").click(function() {
   	if ($(this).hasClass("active")) { return; } // see if same thumb is being clicked
@@ -255,7 +255,7 @@ jQuery(function ($) {
 			initializeForms();
       FB.getLoginStatus(function(response){if (!response.session) { showLogin(); disableForm(); }});
       initializeScrollable();
-			if (window.location.toString().indexOf('#') != -1 && window.location.toString().indexOf('#send_') == -1){
+			if (window.location.toString().indexOf('#') != -1 && window.location.toString().indexOf('#send-') == -1){
 				$('#receive-it').attr('style', 'display:block;');
 				$('#send_your_own_button').click(function() {
 					$('#receive-it').fadeOut('slow', function() {
