@@ -71,8 +71,7 @@ function sendGram() {
   	if ($('#message').val() != initialMessageText)
   	  story.message = $('#message').val();
 	
-  	//TODO: fix this so it actually posts to the friend's feed!!!
-  	FB.api('/me' /*+ $('#recipient_uid').val()*/ + '/feed', 'post', story, 
+  	FB.api('/' + $('#recipient_uid').val() + '/feed', 'post', story, 
   		function(response) {
   	  	if (!response || response.error) {
       	  oops("Oh noes, there was an error sending your gram! Try not to fly off the handle.");
