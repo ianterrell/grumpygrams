@@ -13,6 +13,8 @@ gem "haml"
 
 gem "rails3-generators", :group => :development
 
+gem 'capistrano'
+
 group :test do
   gem "rspec-rails", ">= 2.0.0.beta.12"
   gem "factory_girl", :git => "http://github.com/thoughtbot/factory_girl.git"
@@ -21,7 +23,7 @@ end
 
 # Database Gems
 
-gem 'sqlite3-ruby', :require => 'sqlite3', :group => [:development, :test]
+gem 'sqlite3-ruby', :require => 'sqlite3', :group => [:development, :test, :production]
 
 group :production do
   # gem "pg"
