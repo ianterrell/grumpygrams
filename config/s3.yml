@@ -1,14 +1,14 @@
 development:
   access_key_id: AKIAIM5MDZOEI32BEIDA
   secret_access_key: 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
-  bucket: grumpiverse-grumpygrams-dev
+  bucket: grumpygrams-dev
 
 test:
   access_key_id: AKIAIM5MDZOEI32BEIDA
   secret_access_key: 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
-  bucket: grumpiverse-grumpygrams-test
+  bucket: grumpygrams-test
 
 production:
   access_key_id: AKIAIM5MDZOEI32BEIDA
   secret_access_key: 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
-  bucket: grumpiverse-grumpygrams
+  bucket: grumpygrams
