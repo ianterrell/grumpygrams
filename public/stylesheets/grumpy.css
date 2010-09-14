@@ -1,5 +1,11 @@
-@font-face { font-family: Bigfish; src: url("/fonts/Bigfish.eot") /* EOT file for IE */ }
-@font-face { font-family: Bigfish; src: url("/fonts/Bigfish.ttf") /* TTF file for CSS3 browsers */ }
+
+@font-face {
+	font-family: Bigfish;
+	src: url("/fonts/Bigfish.eot");
+	src: local("☺"),
+	  url("/fonts/Bigfish.ttf") format("truetype"),
+	  url("/fonts/Bigfish.svg") format("svg");
+}
 
 #top-ad { background: #000; text-align: center; padding-bottom: 10px; }
 
