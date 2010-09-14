@@ -66,8 +66,7 @@ function sendGram() {
   	  picture: $(".items img").filter(function(index){return $(this).attr('data-hash') == $('#gram_id').val()}).attr("src"),
   		link: "http://www.grumpygrams.com/#" + $('#gram_id').val(),
 			name: $('#facebook_tagline').val(),
-  		caption: $('#facebook_caption').val(),
-  		description: ""
+  		description: $('#facebook_caption').val()
   	};
   	if ($('#message').val() != initialMessageText)
   	  story.message = $('#message').val();
