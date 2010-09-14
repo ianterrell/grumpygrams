@@ -23,6 +23,7 @@ set :branch, "master"
 set :deploy_to,      "/home/deploy/#{application}"
 
 after "deploy:update_code","deploy:symlink_configs"
+after "deploy:update_code","deploy:symlink_database"
 after "deploy:update_code","deploy:cleanup"
 # after "deploy:update_code","deploy:package_assets"
 
@@ -30,9 +31,16 @@ after "deploy:update_code","deploy:cleanup"
 namespace(:deploy) do  
   task :symlink_configs, :roles => :app, :except => {:no_symlink => true} do
     configs = %w{ database }
-    configs.map! { |file| "ln -nfs #{shared_path}/config/#{file}.yml #{release_path}/config/#{file}.yml" }
+    configs.map! { |file| "ln -nfs #{shared_path}/config/#{file}.sqlite3 #{release_path}/db/#{file}.yml" }
     run <<-CMD
       cd #{release_path} && #{configs.join(' && ')}
+    CMD
+  end
+  
+  task :symlink_database, :roles => :app, :except => {:no_symlink => true} do
+    database = "ln -nfs #{shared_path}/db/production.sqlite3 #{release_path}/db/production.sqlite3"
+    run <<-CMD
+      cd #{release_path} && #{database}
     CMD
   end
 
