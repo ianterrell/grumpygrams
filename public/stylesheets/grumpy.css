@@ -7,7 +7,7 @@
 	  url("/fonts/Bigfish.svg#Bigfish") format("svg");
 }
 
-#top-ad { background: #000; text-align: center; padding-bottom: 10px; }
+#top-ad { background: #000; text-align: center; }
 
 h1 { font-family: Bigfish, serif; font-size: 64px; margin: 0px; }
 

@@ -18,13 +18,14 @@
       = stylesheet_link_tag "ie6"
     = csrf_meta_tag
     = render :partial => "/layouts/analytics_js"
+    = render :partial => "/layouts/ads_js"
   %body  
     #flash{:style => "display:hidden;"}
     #oops{:style => "display:hidden;"}
     #fb-root
-    /
       #top-ad
-        = image_tag "leaderboard_img.jpg"
+        %script{:type => 'text/javascript'}
+          GA_googleFillSlot("GrumpyGrams_TopLeaderboard");
     #wrap
       #top
         #login
