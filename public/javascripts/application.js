@@ -251,7 +251,7 @@ jQuery(function ($) {
     if ($('#admin').size() == 1)
       initializeSortableAdmin();
     else {
-      FB.init({appId: 'fd577fc6f9d8d122717f0fdd6112e234', status: true, cookie: true, xfbml: false});
+      FB.init({appId: '137471566265661', status: true, cookie: true, xfbml: false});
 			initializeForms();
       FB.getLoginStatus(function(response){if (!response.session) { showLogin(); disableForm(); }});
       initializeScrollable();

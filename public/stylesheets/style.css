@@ -10,12 +10,27 @@ Author URI: http://www.woothemes.com
 @import "reset.css";
 
 body { 
-	background: #FFFFFF url(/images/bg-tile.jpg) repeat top center; 
+	background-color: #000000;
 	font-family:Verdana, Geneva, sans-serif; 
 	color: #FFFFFF; 
 	font-size:11px; 
+  height: 100%;
 }
-#wrap {	background: url(/images/bg-jagged.png) repeat-x top center; }
+
+#wrap {	
+  background: url(/images/bg-jagged.png) repeat-x top center;
+  clear: both;
+  min-height: 100%;
+  height: auto!important;
+  height: 100%;
+  margin-bottom: -180px;
+}
+
+#wrap-footer{
+  background: url(/images/bg-bottom-top.png) repeat-x top center;
+	width: 100%;
+	height: 188px;
+}
 
 #content .col-left {width: 700px;}
 
@@ -27,8 +42,8 @@ body {
 /* Header */
 
 #header {
-    float: left;
-    padding-top: 40px;
+  float: left;
+  padding-top: 40px;
 	clear: both;
 	position: relative;
 	margin-bottom:25px;
@@ -42,7 +57,7 @@ body {
 
 /* Content */
 
-#content {width: 960px;	margin:0 auto;padding: 0;}
+#content {width: 960px;	margin:0 auto;padding: 0 0 25px 0;}
 * html #content { height: 550px; }
 #main {	width:460px;}
 #main div { zoom: 1; }
@@ -214,7 +229,9 @@ body {
 #bottom-out {
 	background: #000;
 	width: 100%;
-	padding: 15px 0 14px 0;
+	height: 100%;
+	font-size: 11px;
+	color: #fff;
 }
 #bottom {
 	width: 960px;
@@ -280,10 +297,14 @@ body {
 	padding: 15px 0 14px 0;
 }
 #footer {
-	width: 960px;
-	margin: 0 auto;
+  clear: both;
+  background: #000;
+  position:relative;
+  width:100%;
+  margin-top: -180px;
+  height:180px;   /* Height of the footer */
 	font-size: 11px;
-	color: #222;
+	color: #fff;
 }
 #footer a{ color:#777; }
 #footer .col-right img {vertical-align: middle;}

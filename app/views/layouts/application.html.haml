@@ -17,23 +17,18 @@
       = javascript_include_tag "pngfix"
       = stylesheet_link_tag "ie6"
     = csrf_meta_tag
-    = render :partial => "/layouts/analytics_js"
-    = render :partial => "/layouts/ads_js"
-  %body  
-    #flash{:style => "display:hidden;"}
-    #oops{:style => "display:hidden;"}
-    #fb-root
-      #top-ad
-        %script{:type => 'text/javascript'}
-          GA_googleFillSlot("GrumpyGrams_TopLeaderboard");
+  %body
     #wrap
+      #flash{:style => "display:hidden;"}
+      #oops{:style => "display:hidden;"}
+      #fb-root
       #top
         #login
           = link_to image_tag('fb-login-button.png'), "#", :onclick => "login(); return false;"
         #header
           %h1 GrumpyGrams
         .clear
-      #content.home.wrap
+      #content.home
         #featured-tabber
           .clear
           .top
@@ -43,41 +38,7 @@
                 = yield
               - else
                 = content
-          .clear
-          .bottom
-        .clear
-      #bottom-tile
-      #bottom-out
-        #bottom.wrap
-          #features-top
-          #features
-            = link_to image_tag("montage-ad.png", :alt => "The Grumpiverse!  A webcomic about everything that makes us grumpy, like the news and politics."), "http://www.grumpiverse.com", :title => "The Grumpiverse!  A webcomic about everything that makes us grumpy, like the news and politics."
-            #social
-              = link_to image_tag("fb-sidebar.png", :class => "fb"), "http://www.facebook.com/pages/Grumpiverse/147009798662853"
-              = link_to image_tag("tw-sidebar.png"), "http://twitter.com/grumpiverse"
-              %p
-                = link_to "or follow the whole cast!", "http://twitter.com/grumpiverse/lists/cast", :id => "tw-cast-sidebar"
-            #mc_embed_signup
-              %form#mc-embedded-subscribe-form.validate{:action => "http://grumpiverse.us1.list-manage.com/subscribe/post?u=89d29705020ff837b69494bf7&id=4025a3a8d4", :method => "post", :name => "mc-embedded-subscribe-form", :target => "_blank"}
-                %h3 Get More Grump!
-                %fieldset
-                  %p Turn Hump Day into Grump Day:  Sign up for our weekly mailing list for comics and special deals!
-                  .mc-field-group
-                    %input#mce-EMAIL.required.email.initial{:name => "EMAIL", :type => "text", :value => "Email Address"}
-                  %div
-                    %input#mc-embedded-subscribe.btn{:name => "subscribe", :type => "submit", :value => "Subscribe"}/
-
-      #footer-out
-        #footer.wrap
-          .col-left
-            %p
-              \© 2010
-              = succeed "." do
-                %a{:href => "http://www.grumpiverse.com"} Grumpiverse, LLC
-              All Rights Reserved.
-          .col-right
-            %p
-              Designed by
-              %a{:href => "http://www.woothemes.com"}
-                %img{:alt => "Woo Themes", :height => "21", :src => "http://www.woothemes.com/demo/groovyblog/wp-content/themes/groovyblog/images/woothemes.png", :width => "87"}/
-      / footer Ends
+      #wrap-footer
+    #footer
+      #bottom
+        %p= "© #{Time.now.year} GrumpyGrams. All Rights Reserved."

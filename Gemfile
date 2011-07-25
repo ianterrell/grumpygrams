@@ -13,7 +13,9 @@ gem "haml"
 
 gem "rails3-generators", :group => :development
 
-gem 'capistrano'
+gem 'heroku'
+
+#gem 'capistrano'
 
 group :test do
   gem "rspec-rails", ">= 2.0.0.beta.12"
@@ -23,10 +25,10 @@ end
 
 # Database Gems
 
-gem 'sqlite3-ruby', :require => 'sqlite3', :group => [:development, :test, :production]
+gem 'sqlite3-ruby', :require => 'sqlite3', :group => [:development, :test]
 
 group :production do
-  # gem "pg"
+  #gem "pg"
 end
 
 # Use unicorn as the web server
