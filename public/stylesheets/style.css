@@ -10,26 +10,25 @@ Author URI: http://www.woothemes.com
 @import "reset.css";
 
 body { 
-	background-color: #000000;
+	background: #000 url(/images/bg.png) repeat-x top center;
 	font-family:Verdana, Geneva, sans-serif; 
 	color: #FFFFFF; 
 	font-size:11px; 
-  height: 100%;
 }
+
+html, body {height: 100%;}
 
 #wrap {	
   background: url(/images/bg-jagged.png) repeat-x top center;
-  clear: both;
   min-height: 100%;
-  height: auto!important;
+  height: auto !important;
   height: 100%;
-  margin-bottom: -180px;
+  margin: 0 auto -4.8em;
 }
 
 #wrap-footer{
-  background: url(/images/bg-bottom-top.png) repeat-x top center;
-	width: 100%;
-	height: 188px;
+	height: 4.8em;
+	clear: both;
 }
 
 #content .col-left {width: 700px;}
@@ -296,15 +295,18 @@ body {
 	width: 100%;
 	padding: 15px 0 14px 0;
 }
-#footer {
-  clear: both;
-  background: #000;
-  position:relative;
+#footer-wrapper {
+  background: url(/images/bg-bottom-top.png) repeat-x top center;
   width:100%;
-  margin-top: -180px;
-  height:180px;   /* Height of the footer */
-	font-size: 11px;
+  height: 4em;
+	clear: both;
+	padding-top: 8px;
+}
+#footer {
+  font-size: 11px;
 	color: #fff;
+	height: 100%;
+  background: #000;
 }
 #footer a{ color:#777; }
 #footer .col-right img {vertical-align: middle;}
