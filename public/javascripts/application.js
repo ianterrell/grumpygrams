@@ -79,7 +79,7 @@ function sendGram() {
   		    $('#submit_button').removeAttr('disabled');
   				$('#submit_button').val('Try sending again!');
   		  } else {
-  		    _gaq.push(['_trackEvent', 'Grams', 'Send', $('#gram_id').val()]);
+  		    //_gaq.push(['_trackEvent', 'Grams', 'Send', $('#gram_id').val()]);
           enableForm();
   				flash("GrumpyGram delivered!  Now they'll be so happy!  Send another?");
   				$('#submit_button').removeAttr('disabled');
